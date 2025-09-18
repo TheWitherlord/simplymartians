@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "simplymartians:auraforce"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplymartians:technomace",
+          "functions": []
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplymartians:fluxium_sword"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplymartians:vibraedge",
+          "functions": []
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplymartians:martian_zapper",
+          "functions": []
+        }
+      ]
+    }
+  ],
+  "random_sequence": "simplymartians:chests/martian_vault/martian_ship_reward_unique"
+}

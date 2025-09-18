@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  #",
+        " ##",
+        "###"
+    ],
+    "key": {
+        "#": {
+          "item":"simplymartians:martian_interior"
+        }
+    },
+    "result": {
+        "id": "simplymartians:martian_interior_stairs",
+        "count": 4
+    }
+}

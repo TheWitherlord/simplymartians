@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "simplymartians:martian_tech"
+        },
+        {
+            "item": "simplymartians:martian_space_plating"
+        },
+{
+            "item": "minecraft:redstone"
+        }
+
+    ],
+    "result": {
+        "id": "simplymartians:martian_power_cell",
+        "count": 4
+    }
+}

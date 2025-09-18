@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "##",
+        "##"
+    ],
+    "key": {
+        "#": {
+            "item": "simplymartians:martian_space_plating"
+        }
+    },
+    "result": {
+        "id": "simplymartians:small_martian_space_plating",
+        "count": 4
+    }
+}

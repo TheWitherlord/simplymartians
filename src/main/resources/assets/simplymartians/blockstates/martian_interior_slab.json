@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "simplymartians:block/martian_interior_slab"
+        },
+        "type=double": {
+            "model": "simplymartians:block/martian_interior"
+        },
+        "type=top": {
+            "model": "simplymartians:block/martian_interior_slab_top"
+        }
+    }
+}

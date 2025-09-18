@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#G#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "simplymartians:martian_flooring"
+        },
+        "G": {
+            "item": "simplymartians:martian_power_cell"
+        }
+    },
+    "result": {
+        "id": "simplymartians:martian_floor_light",
+        "count": 1
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "simplymartians:block/martian_interior",
+    "top": "simplymartians:block/martian_interior",
+    "side": "simplymartians:block/martian_interior"
+  }
+}
+
+
+
+
+
+
+

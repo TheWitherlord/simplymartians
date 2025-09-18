@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "simplymartians:block/martian_space_plating_slab"
+        },
+        "type=double": {
+            "model": "simplymartians:block/martian_space_plating"
+        },
+        "type=top": {
+            "model": "simplymartians:block/martian_space_plating_slab_top"
+        }
+    }
+}

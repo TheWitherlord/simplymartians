@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "simplymartians:block/martian_interior_lamp" },
+        "axis=z":   { "model": "simplymartians:block/martian_interior_lamp", "x": 90 },
+        "axis=x":   { "model": "simplymartians:block/martian_interior_lamp", "x": 90, "y": 90 }
+    }
+}

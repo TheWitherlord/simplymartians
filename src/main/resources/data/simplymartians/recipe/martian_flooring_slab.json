@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "simplymartians:martian_flooring"
+        }
+    },
+    "result": {
+        "id": "simplymartians:martian_flooring_slab",
+        "count": 6
+    }
+}

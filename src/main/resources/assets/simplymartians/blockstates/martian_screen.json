@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      { "model": "simplymartians:block/martian_screen_1" },
+      { "model": "simplymartians:block/martian_screen_2" },
+      { "model": "simplymartians:block/martian_screen_3" },
+      { "model": "simplymartians:block/martian_screen_4" },
+      { "model": "simplymartians:block/martian_screen_5" },
+      { "model": "simplymartians:block/martian_screen_6" }
+    ]
+  }
+}

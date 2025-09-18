@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "simplymartians:block/martian_screen_6"
+    }
+}

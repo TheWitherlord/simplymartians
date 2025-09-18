@@ -1,0 +1,54 @@
+{
+  "itemGroup.simplymartians": "Simply Martians",
+  
+  //items
+  "item.simplymartians.martian_tech": "Martian Tech",
+  "item.simplymartians.martian_spawn_egg": "Spawn Martian",
+  "item.simplymartians.martian_brute_spawn_egg": "Spawn Martian Brute",
+    "item.simplymartians.martian_power_cell": "Martian Power Cell",
+    "item.simplymartians.martian_key": "Martian Key",
+    "item.simplymartians.martian_zapper": "Martian Zapper",
+    "item.simplymartians.vibraedge": "Vibra-Edge",
+    "item.simplymartians.fluxium_sword": "Fluxium Sword",
+        "item.simplymartians.auraforce": "Auraforce",
+        "item.simplymartians.technomace": "Technomace",
+        "item.simplymartians.martian_helmet": "Martian Space Helmet",
+        "item.simplymartians.martian_chestplate": "Martian Space Uniform",
+        "item.simplymartians.martian_leggings": "Martian Space Uniform Pants",
+        "item.simplymartians.martian_boots": "Martian Space Boots",    
+        
+        //blocks
+        "block.simplymartians.martian_space_plating": "Martian Space Plating Block",
+          "block.simplymartians.small_martian_space_plating": "Small Martian Space Plating",
+            "block.simplymartians.martian_flooring": "Martian Flooring",
+            "block.simplymartians.martian_screen": "Martian Screen",
+            "block.simplymartians.martian_interior": "Martian Interior",
+            "block.simplymartians.martian_interior_lamp": "Martian Interior Lamp",
+            "block.simplymartians.martian_floor_light": "Martian Floor Light",
+                "block.simplymartians.martian_console": "Martian Console",
+                "block.simplymartians.martian_space_plating_slab": "Martian Space Plating Slab",
+                    "block.simplymartians.martian_space_plating_stairs": "Martian Space Plating Stairs",
+    "block.simplymartians.martian_flooring_slab": "Martian Flooring Slab",
+      "block.simplymartians.martian_flooring_stairs": "Martian Flooring Stairs",
+  "block.simplymartians.martian_interior_slab": "Martian Interior Slab",
+      "block.simplymartians.martian_interior_stairs": "Martian Interior Stairs",
+  
+  
+//entities
+"entity.simplymartians.martian":"Martian",
+"entity.simplymartians.martian_brute":"Martian Brute",
+"entity.simplymartians.martian_probe":"Martian Probe",
+
+"entity.simplymartians.martian_brute":"Zap Bolt",
+"entity.simplymartians.flux_wave":"Flux Wave",
+
+//effects
+"effect.simplymartians.overshock":"Overshock",
+  "effect.simplymartians.overshock.description": "You are rapidly losing life. ",
+
+//tooltips
+"tooltip.simplymartians.zapper.tooltip": "Ammo:",
+"tooltip.simplymartians.zapper.ammo": "Martian Power Cells"
+
+
+ }

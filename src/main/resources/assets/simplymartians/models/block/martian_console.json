@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "side": "simplymartians:block/martian_interior",
+    "front": "simplymartians:block/martian_console",
+    "south": "simplymartians:block/martian_interior",
+    "top": "simplymartians:block/martian_space_plating"
+  }
+}

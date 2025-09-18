@@ -1,0 +1,15 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "simplymartians:block/martian_space_plating",
+    "top": "simplymartians:block/martian_space_plating",
+    "side": "simplymartians:block/martian_space_plating"
+  }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "simplymartians:martian_ship_grounded",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 75673903,
+    "spacing": 45,
+    "separation": 10,
+    "frequency": 0.3
+  }
+}

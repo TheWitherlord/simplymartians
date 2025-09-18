@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#E#",
+        "#E#",
+        "#E#"
+    ],
+    "key": {
+        "#": {
+            "item": "simplymartians:martian_interior"
+        },
+        "E": {
+            "item": "simplymartians:martian_power_cell"
+        }
+    },
+    "result": {
+        "id": "simplymartians:martian_interior_lamp",
+        "count": 1
+    }
+}
