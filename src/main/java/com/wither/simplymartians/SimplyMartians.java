@@ -9,10 +9,10 @@ import com.mojang.logging.LogUtils;
 import com.wither.simplymartians.core.init.InitBlocks;
 import com.wither.simplymartians.core.init.InitEntity;
 import com.wither.simplymartians.core.init.InitItem;
+import com.wither.simplymartians.core.init.InitSoundEvents;
 import com.wither.simplymartians.core.init.ModArmorMaterials;
 import com.wither.simplymartians.core.init.ModMobEffects;
 import com.wither.simplymartians.core.init.ModParticleTypes;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -63,6 +63,7 @@ public class SimplyMartians {
 	       ModParticleTypes.PARTICLE_TYPES.register(modEventBus);
 			ModMobEffects.MOB_EFFECT_DEFERRED_REGISTER.register(modEventBus);
 			ModArmorMaterials.ARMOR_MATERIALS.register(modEventBus);
+	        InitSoundEvents.initialise(modEventBus);
 
 		
 

@@ -3,6 +3,7 @@ package com.wither.simplymartians.entities;
 import javax.annotation.Nullable;
 
 import com.wither.simplymartians.core.init.InitItem;
+import com.wither.simplymartians.core.init.InitSoundEvents;
 import com.wither.simplymartians.core.init.ModMobEffects;
 import com.wither.simplymartians.core.util.TagInit;
 import com.wither.simplymartians.items.MartianZapperItem;
@@ -11,10 +12,12 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -244,7 +247,24 @@ public class SimpleMartianEntity extends Monster implements RangedAttackMob {
 	}
 
 	
-	
+	 @Override
+	    protected SoundEvent getAmbientSound() {
+	        return InitSoundEvents.MARTIAN_AMBIENT.get();
+	    }
+
+	    @Override
+	    protected SoundEvent getHurtSound(DamageSource damageSource) {
+	        return InitSoundEvents.MARTIAN_HURT.get();
+	    }
+
+	    @Override
+	    protected SoundEvent getDeathSound() {
+	        return InitSoundEvents.MARTIAN_DEATH.get();
+	    }
+
+	    protected SoundEvent getStepSound() {
+	        return SoundEvents.ZOMBIE_STEP;
+	    }
 
 	@Override
 	public void setItemSlot(EquipmentSlot slot, ItemStack stack) {

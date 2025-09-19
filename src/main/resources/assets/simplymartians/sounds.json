@@ -1,0 +1,47 @@
+{
+		"item.martian_zapper.fire": {
+		"category": "player",
+		"sounds": [
+			"simplymartians:items/martian_zapper/pew"
+		],
+		"subtitle": "subtitles.item.simplymartians:item.martian_zapper.fire"
+	},
+
+"mob.martian.ambient": {
+		"category": "hostile",
+		"sounds": [
+                   "simplymartians:mob/martian/ambient_1",
+                   "simplymartians:mob/martian/ambient_2",
+                   "simplymartians:mob/martian/ambient_3"
+
+],
+		"subtitle": "subtitles.entity.simplymartians:mob.martian.ambient"
+},
+  
+"mob.martian.hurt": {
+		"category": "hostile",
+		"sounds": [
+                 "simplymartians:mob/martian/hurt_1",
+                   "simplymartians:mob/martian/hurt_2"
+		],
+		"subtitle": "subtitles.entity.simplymartians:mob.martian.hurt"
+
+},
+"mob.martian.death": {
+		"category": "hostile",
+		"sounds": [
+                 "simplymartians:mob/martian/death"
+		],
+		"subtitle": "subtitles.entity.simplymartians:mob.martian.death"
+
+
+}
+
+}
+
+
+
+
+
+		
+
