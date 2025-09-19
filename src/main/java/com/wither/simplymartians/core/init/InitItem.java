@@ -100,6 +100,9 @@ public class InitItem {
 	public static final DeferredItem<Item> METEOR_ROCK = ITEMS.register("meteor_rock",
 			() -> new BlockItem(InitBlocks.METEOR_ROCK.get(), itemBuilder().stacksTo(64)));
 	
+	public static final DeferredItem<Item> FLUXIUM_ORE = ITEMS.register("fluxium_ore",
+			() -> new BlockItem(InitBlocks.FLUXIUM_ORE.get(), itemBuilder().stacksTo(64)));
+	
 	public static final DeferredItem<Item> TEKTITE = ITEMS.register("tektite",
 			() -> new BlockItem(InitBlocks.TEKTITE.get(), itemBuilder().stacksTo(64)));
 	
