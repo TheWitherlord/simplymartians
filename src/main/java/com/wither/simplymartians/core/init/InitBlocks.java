@@ -18,48 +18,56 @@ public class InitBlocks {
 	
 	
 	public static final DeferredBlock<Block> MARTIAN_SPACE_PLATING = BLOCKS.register("martian_space_plating",
-			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(6.0F, 1200F)
+			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 	
 	public static final DeferredBlock<Block> SMALL_MARTIAN_SPACE_PLATING = BLOCKS.register("small_martian_space_plating",
-			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(6.0F, 1200F)
+			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 
 	public static final DeferredBlock<Block> MARTIAN_FLOORING = BLOCKS.register("martian_flooring",
-			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(6.0F, 1200F)
+			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 	
 	public static final DeferredBlock<Block> MARTIAN_SCREEN = BLOCKS.register("martian_screen",
-			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(6.0F, 1200F)
+			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 	
 	public static final DeferredBlock<Block> MARTIAN_INTERIOR = BLOCKS.register("martian_interior",
-			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(6.0F, 1200F)
+			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 	
 	
 
 	public static final DeferredBlock<Block> MARTIAN_INTERIOR_LAMP = BLOCKS.register("martian_interior_lamp",
 			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).lightLevel((state) -> {
-				return 12;}) .strength(6.0F, 1200F)
+				return 12;}) .strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 	
 	public static final DeferredBlock<Block> MARTIAN_FLOOR_LIGHT = BLOCKS.register("martian_floor_light",
 			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).lightLevel((state) -> {
-				return 12;}) .strength(6.0F, 1200F)
+				return 12;}) .strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 	
 	public static final DeferredBlock<Block> MARTIAN_CONSOLE = BLOCKS.register("martian_console",
 			() -> new ConsoleBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).lightLevel((state) -> {
-				return 4;}) .strength(6.0F, 1200F)
+				return 4;}) .strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
+	
+	//meteor blocks
+	
+	public static final DeferredBlock<Block> METEOR_ROCK = BLOCKS.register("meteor_rock",
+			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(6.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	
 	
 	
 	
 	//slabs and stairs
 	
 	public static final DeferredBlock<Block> MARTIAN_SPACE_PLATING_SLAB = BLOCKS.register("martian_space_plating_slab",
-			() -> new SlabBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(6.0F, 1200F)
+			() -> new SlabBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 	
 	public static final DeferredBlock<Block> MARTIAN_SPACE_PLATING_STAIRS = BLOCKS.register("martian_space_plating_stairs",
@@ -68,7 +76,7 @@ public class InitBlocks {
 	
 	
 	public static final DeferredBlock<Block> MARTIAN_INTERIOR_SLAB = BLOCKS.register("martian_interior_slab",
-			() -> new SlabBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(6.0F, 1200F)
+			() -> new SlabBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 	
 	public static final DeferredBlock<Block> MARTIAN_INTERIOR_STAIRS = BLOCKS.register("martian_interior_stairs",
@@ -77,7 +85,7 @@ public class InitBlocks {
 	
 	
 	public static final DeferredBlock<Block> MARTIAN_FLOORING_SLAB = BLOCKS.register("martian_flooring_slab",
-			() -> new SlabBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(6.0F, 1200F)
+			() -> new SlabBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 	
 	public static final DeferredBlock<Block> MARTIAN_FLOORING_STAIRS = BLOCKS.register("martian_flooring_stairs",
