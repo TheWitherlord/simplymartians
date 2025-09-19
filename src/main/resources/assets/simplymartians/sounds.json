@@ -2,7 +2,7 @@
 		"item.martian_zapper.fire": {
 		"category": "player",
 		"sounds": [
-			"simplymartians:items/martian_zapper/pew"
+			"simplymartians:item/martian_zapper/laser_shoot"
 		],
 		"subtitle": "subtitles.item.simplymartians:item.martian_zapper.fire"
 	},

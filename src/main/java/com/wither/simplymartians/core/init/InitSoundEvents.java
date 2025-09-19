@@ -20,7 +20,7 @@ public class InitSoundEvents {
 
 
 
-	public static final Supplier<SoundEvent> PEW = registerSoundEvent("item.martian_zapper.fire");
+	public static final Supplier<SoundEvent> LASER_SHOOT = registerSoundEvent("item.martian_zapper.fire");
 	public static final Supplier<SoundEvent> MARTIAN_AMBIENT = registerSoundEvent("mob.martian.ambient");
 	public static final Supplier<SoundEvent> MARTIAN_HURT = registerSoundEvent("mob.martian.hurt");
 	public static final Supplier<SoundEvent> MARTIAN_DEATH = registerSoundEvent("mob.martian.death");

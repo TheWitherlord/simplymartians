@@ -52,10 +52,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 
 public class SimpleMartianEntity extends Monster implements RangedAttackMob {
-	
+
 	private final ZapperAttackGoal<SimpleMartianEntity> bowGoal = new ZapperAttackGoal<>(this, 1.0, 20, 15.0F);
 	private final MeleeAttackGoal meleeGoal = new MeleeAttackGoal(this, 1.2, false) {
-		
+
 		@Override
 		public void stop() {
 			super.stop();
@@ -74,7 +74,6 @@ public class SimpleMartianEntity extends Monster implements RangedAttackMob {
 		this.reassessWeaponGoal();
 
 	}
-	
 
 	@Override
 	protected void registerGoals() {
@@ -94,43 +93,40 @@ public class SimpleMartianEntity extends Monster implements RangedAttackMob {
 		return new WallClimberNavigation(this, level);
 	}
 
-	private static final EntityDataAccessor<Integer> VARIANT =
-            SynchedEntityData.defineId(SimpleMartianEntity.class, EntityDataSerializers.INT);
-	
-	
-	 @Override
-	    protected void defineSynchedData(SynchedEntityData.Builder builder) {
-	        super.defineSynchedData(builder);
-	        builder.define(VARIANT, 0);
-	    }
+	private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(SimpleMartianEntity.class,
+			EntityDataSerializers.INT);
 
-	    private int getTypeVariant() {
-	        return this.entityData.get(VARIANT);
-	    }
+	@Override
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+		super.defineSynchedData(builder);
+		builder.define(VARIANT, 0);
+	}
 
-	    public MartianVariant getVariant() {
-	        return MartianVariant.byId(this.getTypeVariant() & 255);
-	    }
+	private int getTypeVariant() {
+		return this.entityData.get(VARIANT);
+	}
 
-	    public void setVariant(MartianVariant variant) {
-	        this.entityData.set(VARIANT, variant.getId() & 255);
-	    }
+	public MartianVariant getVariant() {
+		return MartianVariant.byId(this.getTypeVariant() & 255);
+	}
 
-	    @Override
-	    public void addAdditionalSaveData(CompoundTag compound) {
-	        super.addAdditionalSaveData(compound);
-	        compound.putInt("Variant", this.getTypeVariant());
-	    }
+	public void setVariant(MartianVariant variant) {
+		this.entityData.set(VARIANT, variant.getId() & 255);
+	}
 
-	    @Override
-	    public void readAdditionalSaveData(CompoundTag compound) {
-	        super.readAdditionalSaveData(compound);
-	        this.entityData.set(VARIANT, compound.getInt("Variant"));
-			this.reassessWeaponGoal();
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putInt("Variant", this.getTypeVariant());
+	}
 
-	    }
-	
-	
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		this.entityData.set(VARIANT, compound.getInt("Variant"));
+		this.reassessWeaponGoal();
+
+	}
 
 	public static AttributeSupplier.Builder createAttributes() {
 		return Monster.createMonsterAttributes().add(Attributes.ATTACK_DAMAGE, 4.0).add(Attributes.MAX_HEALTH, 30.0)
@@ -143,19 +139,14 @@ public class SimpleMartianEntity extends Monster implements RangedAttackMob {
 
 	}
 
-	
-
-	
-
-
 	@Nullable
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty,
 			MobSpawnType pSpawnType, @Nullable SpawnGroupData pSpawnGroupData) {
-		
+
 		MartianVariant variant = Util.getRandom(MartianVariant.values(), this.random);
-        this.setVariant(variant);
-        
+		this.setVariant(variant);
+
 		RandomSource randomsource = pLevel.getRandom();
 		pSpawnGroupData = super.finalizeSpawn(pLevel, pDifficulty, pSpawnType, pSpawnGroupData);
 		float f = pDifficulty.getSpecialMultiplier();
@@ -167,8 +158,6 @@ public class SimpleMartianEntity extends Monster implements RangedAttackMob {
 		this.populateDefaultEquipmentEnchantments(pLevel, randomsource, pDifficulty);
 		return pSpawnGroupData;
 	}
-	
-	
 
 	private ItemStack createSpawnWeapon() {
 		return (double) this.random.nextFloat() < 0.5 ? new ItemStack(InitItem.MARTIAN_ZAPPER.get())
@@ -187,14 +176,12 @@ public class SimpleMartianEntity extends Monster implements RangedAttackMob {
 
 	}
 
-	
-
 	public void reassessWeaponGoal() {
 		if (this.level() != null && !this.level().isClientSide) {
 			this.goalSelector.removeGoal(this.meleeGoal);
 			this.goalSelector.removeGoal(this.bowGoal);
-			ItemStack itemstack = this.getItemInHand(ProjectileUtil.getWeaponHoldingHand(this,
-					item -> item instanceof MartianZapperItem));
+			ItemStack itemstack = this.getItemInHand(
+					ProjectileUtil.getWeaponHoldingHand(this, item -> item instanceof MartianZapperItem));
 			if (itemstack.is(InitItem.MARTIAN_ZAPPER.get())) {
 				int i = this.getHardAttackInterval();
 				if (this.level().getDifficulty() != Difficulty.HARD) {
@@ -220,51 +207,46 @@ public class SimpleMartianEntity extends Monster implements RangedAttackMob {
 	/**
 	 * Attack the specified entity using a ranged attack.
 	 */
-	
-	
-	 @Override
-	    public void performRangedAttack(LivingEntity target, float distanceFactor) {
-	        this.getItemInHand(ProjectileUtil.getWeaponHoldingHand(this, item -> item instanceof net.minecraft.world.item.ProjectileWeaponItem));
 
-	        ZapBolt snowball = new ZapBolt(this.level(), this);
-	        double d0 = target.getEyeY() - 1.1F;
-	        double d1 = target.getX() - this.getX();
-	        double d2 = d0 - snowball.getY();
-	        double d3 = target.getZ() - this.getZ();
-	        double d4 = Math.sqrt(d1 * d1 + d3 * d3) * 0.1F;
-	        snowball.shoot(d1, d2 + d4, d3, 1.8F, 1.0F);
-	        this.playSound(SoundEvents.SNOW_GOLEM_SHOOT, 1.0F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
-	        this.level().addFreshEntity(snowball);
-	    }
+	@Override
+	public void performRangedAttack(LivingEntity target, float distanceFactor) {
+		this.getItemInHand(ProjectileUtil.getWeaponHoldingHand(this,
+				item -> item instanceof net.minecraft.world.item.ProjectileWeaponItem));
 
-   
-
-	
+		ZapBolt snowball = new ZapBolt(this.level(), this);
+		double d0 = target.getEyeY() - 1.1F;
+		double d1 = target.getX() - this.getX();
+		double d2 = d0 - snowball.getY();
+		double d3 = target.getZ() - this.getZ();
+		double d4 = Math.sqrt(d1 * d1 + d3 * d3) * 0.1F;
+		snowball.shoot(d1, d2 + d4, d3, 1.8F, 1.0F);
+		this.playSound(InitSoundEvents.LASER_SHOOT.get(), 0.5f, 1.0f / (this.getRandom().nextFloat() * 0.4F + 0.8F));
+		this.level().addFreshEntity(snowball);
+	}
 
 	@Override
 	public boolean canFireProjectileWeapon(ProjectileWeaponItem projectileWeapon) {
 		return projectileWeapon == InitItem.MARTIAN_ZAPPER.get();
 	}
 
-	
-	 @Override
-	    protected SoundEvent getAmbientSound() {
-	        return InitSoundEvents.MARTIAN_AMBIENT.get();
-	    }
+	@Override
+	protected SoundEvent getAmbientSound() {
+		return InitSoundEvents.MARTIAN_AMBIENT.get();
+	}
 
-	    @Override
-	    protected SoundEvent getHurtSound(DamageSource damageSource) {
-	        return InitSoundEvents.MARTIAN_HURT.get();
-	    }
+	@Override
+	protected SoundEvent getHurtSound(DamageSource damageSource) {
+		return InitSoundEvents.MARTIAN_HURT.get();
+	}
 
-	    @Override
-	    protected SoundEvent getDeathSound() {
-	        return InitSoundEvents.MARTIAN_DEATH.get();
-	    }
+	@Override
+	protected SoundEvent getDeathSound() {
+		return InitSoundEvents.MARTIAN_DEATH.get();
+	}
 
-	    protected SoundEvent getStepSound() {
-	        return SoundEvents.ZOMBIE_STEP;
-	    }
+	protected SoundEvent getStepSound() {
+		return SoundEvents.ZOMBIE_STEP;
+	}
 
 	@Override
 	public void setItemSlot(EquipmentSlot slot, ItemStack stack) {
@@ -279,9 +261,8 @@ public class SimpleMartianEntity extends Monster implements RangedAttackMob {
 		if (super.isAlliedTo(pEntity)) {
 			return true;
 		} else {
-			return !pEntity.getType().is(TagInit.MARTIAN) ? false
-					: this.getTeam() == null && pEntity.getTeam() == null;
+			return !pEntity.getType().is(TagInit.MARTIAN) ? false : this.getTeam() == null && pEntity.getTeam() == null;
 		}
 	}
-	
+
 }

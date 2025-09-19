@@ -6,6 +6,7 @@ import java.util.function.Predicate;
 import org.jetbrains.annotations.Nullable;
 
 import com.wither.simplymartians.core.init.InitItem;
+import com.wither.simplymartians.core.init.InitSoundEvents;
 import com.wither.simplymartians.entities.ZapBolt;
 
 import net.minecraft.ChatFormatting;
@@ -95,7 +96,7 @@ public class MartianZapperItem extends BowItem {
 				player.getX(),
 				player.getY(),
 				player.getZ(),
-				SoundEvents.EVOKER_CAST_SPELL,
+				InitSoundEvents.LASER_SHOOT.get(),
 				SoundSource.NEUTRAL,
 				0.5f,
 				1.0f / (level.getRandom().nextFloat() * 0.4f + 1.2f) + 0.5f
