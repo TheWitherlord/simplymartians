@@ -31,6 +31,23 @@ public class InitItem {
 	public static final DeferredItem<Item> MARTIAN_KEY = ITEMS.register("martian_key",
 			() -> new Item(itemBuilder().stacksTo(64)));
 	
+	public static final DeferredItem<Item> BLUE_FLUXIUM_CRYSTAL = ITEMS.register("blue_fluxium_crystal",
+			() -> new Item(itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> RED_FLUXIUM_CRYSTAL = ITEMS.register("red_fluxium_crystal",
+			() -> new Item(itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> YELLOW_FLUXIUM_CRYSTAL = ITEMS.register("yellow_fluxium_crystal",
+			() -> new Item(itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> GREEN_FLUXIUM_CRYSTAL = ITEMS.register("green_fluxium_crystal",
+			() -> new Item(itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> PURPLE_FLUXIUM_CRYSTAL = ITEMS.register("purple_fluxium_crystal",
+			() -> new Item(itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> MARTIAN_SPACE_PLATES = ITEMS.register("martian_space_plates",
+			() -> new Item(itemBuilder().stacksTo(64)));
 	
 	//martian weaponry
 	
