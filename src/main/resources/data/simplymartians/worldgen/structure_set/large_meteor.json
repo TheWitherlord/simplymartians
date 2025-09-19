@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "simplymartians:large_meteor",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 89673654,
+    "spacing": 45,
+    "separation": 10,
+    "frequency": 0.3
+  }
+}
