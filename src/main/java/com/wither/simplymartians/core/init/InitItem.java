@@ -97,6 +97,11 @@ public class InitItem {
 	public static final DeferredItem<Item> MARTIAN_CONSOLE = ITEMS.register("martian_console",
 			() -> new BlockItem(InitBlocks.MARTIAN_CONSOLE.get(), itemBuilder().stacksTo(64)));
 	
+	public static final DeferredItem<Item> METEOR_ROCK = ITEMS.register("meteor_rock",
+			() -> new BlockItem(InitBlocks.METEOR_ROCK.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> TEKTITE = ITEMS.register("tektite",
+			() -> new BlockItem(InitBlocks.TEKTITE.get(), itemBuilder().stacksTo(64)));
 	
 	//slabs and stairs
 	
