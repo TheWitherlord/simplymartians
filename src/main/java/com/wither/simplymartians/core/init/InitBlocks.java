@@ -51,7 +51,7 @@ public class InitBlocks {
 	
 	public static final DeferredBlock<Block> MARTIAN_CONSOLE = BLOCKS.register("martian_console",
 			() -> new ConsoleBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).lightLevel((state) -> {
-				return 4;}) .strength(3.0F, 1200F)
+				return 6;}) .strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 	
 	//meteor blocks
@@ -61,7 +61,8 @@ public class InitBlocks {
 					.requiresCorrectToolForDrops()));
 	
 	public static final DeferredBlock<Block> FLUXIUM_ORE = BLOCKS.register("fluxium_ore",
-			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(6.0F, 1200F)
+			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.STONE).lightLevel((state) -> {
+				return 12;}).strength(6.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 	
 	public static final DeferredBlock<Block> TEKTITE = BLOCKS.register("tektite",
