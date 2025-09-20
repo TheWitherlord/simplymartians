@@ -1,0 +1,53 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "simplymartians:blue_fluxium_crystal",
+          "weight": 2
+        },
+{
+          "type": "minecraft:item",
+          "name": "simplymartians:red_fluxium_crystal",
+          "weight": 2
+        },
+{
+          "type": "minecraft:item",
+          "name": "simplymartians:yellow_fluxium_crystal",
+          "weight": 2
+        },
+{
+          "type": "minecraft:item",
+          "name": "simplymartians:green_fluxium_crystal",
+          "weight": 2
+        },
+{
+          "type": "minecraft:item",
+          "name": "simplymartians:purple_fluxium_crystal",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:raw_iron",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ],
+          "conditions": []
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "simplymartians:gameplay/archaeology_meteor"
+}

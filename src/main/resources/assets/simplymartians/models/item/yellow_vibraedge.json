@@ -1,0 +1,91 @@
+{
+	"parent": "item/handheld",
+"loader": "neoforge:item_layers",
+  "neoforge_data": {
+    "layers": {
+      "0": {
+        "block_light": 15,
+        "sky_light": 15
+      }
+    }
+  },
+  "render_types": {
+    "minecraft:translucent": [
+      0
+    ]
+  },
+
+	"textures": {
+		"layer0": "simplymartians:item/yellow_vibraedge"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [
+				-80,
+				260,
+				-40
+			],
+			"translation": [
+				-2,
+				6.5,
+				2.5
+			],
+			"scale": [
+				1.2,
+				1.2,
+				0.85
+			]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [
+				-80,
+				-280,
+				40
+			],
+			"translation": [
+				-2,
+				6.5,
+				2.5
+			],
+			"scale": [
+				1.2,
+				1.2,
+				0.85
+			]
+		},
+		"firstperson_righthand": {
+			"rotation": [
+				0,
+				-90,
+				25
+			],
+			"translation": [
+				1.13,
+				6.0,
+				1.10
+			],
+			"scale": [
+				1.13,
+				1.13,
+				0.63
+			]
+		},
+		"firstperson_lefthand": {
+			"rotation": [
+				0,
+				90,
+				-25
+			],
+			"translation": [
+				1.13,
+				6.0,
+				1.13
+			],
+			"scale": [
+				1.13,
+				1.13,
+				0.63
+			]
+		}
+	}
+}

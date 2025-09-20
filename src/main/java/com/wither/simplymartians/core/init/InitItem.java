@@ -31,6 +31,9 @@ public class InitItem {
 	public static final DeferredItem<Item> MARTIAN_KEY = ITEMS.register("martian_key",
 			() -> new Item(itemBuilder().stacksTo(64)));
 	
+	public static final DeferredItem<Item> UNREFINED_FLUXIUM = ITEMS.register("unrefined_fluxium",
+			() -> new Item(itemBuilder().stacksTo(64)));
+	
 	public static final DeferredItem<Item> BLUE_FLUXIUM_CRYSTAL = ITEMS.register("blue_fluxium_crystal",
 			() -> new Item(itemBuilder().stacksTo(64)));
 	
@@ -56,6 +59,26 @@ public class InitItem {
 					itemBuilder().stacksTo(1).durability(250).rarity(Rarity.RARE).fireResistant()));
 	
 	public static final DeferredItem<Item> VIBRAEDGE = ITEMS.register("vibraedge",
+			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 6, -1.7F,
+					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+	
+	public static final DeferredItem<Item> RED_VIBRAEDGE = ITEMS.register("red_vibraedge",
+			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 6, -1.7F,
+					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+	
+	public static final DeferredItem<Item> YELLOW_VIBRAEDGE = ITEMS.register("yellow_vibraedge",
+			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 6, -1.7F,
+					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+	
+	public static final DeferredItem<Item> GREEN_VIBRAEDGE = ITEMS.register("green_vibraedge",
+			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 6, -1.7F,
+					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+	
+	public static final DeferredItem<Item> PURPLE_VIBRAEDGE = ITEMS.register("purple_vibraedge",
 			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 6, -1.7F,
 					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
 							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
