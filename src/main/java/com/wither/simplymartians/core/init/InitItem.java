@@ -3,6 +3,7 @@ package com.wither.simplymartians.core.init;
 import com.wither.simplymartians.SimplyMartians;
 import com.wither.simplymartians.items.AuraforceItem;
 import com.wither.simplymartians.items.MartianArmorItem;
+import com.wither.simplymartians.items.MartianDrillItem;
 import com.wither.simplymartians.items.MartianMaceItem;
 import com.wither.simplymartians.items.MartianPowerCellItem;
 import com.wither.simplymartians.items.MartianSwordItem;
@@ -95,6 +96,34 @@ public class InitItem {
 	public static final DeferredItem<Item> TECHNOMACE = ITEMS.register("technomace",
 			() -> new MartianMaceItem(ModToolMaterials.MARTIAN, itemBuilder().rarity(Rarity.EPIC).fireResistant()
 							.attributes(MartianMaceItem.createAttributes(ModToolMaterials.MARTIAN, 7, -3.2F, 0.50f, 2))));
+	
+	
+	//martian tools
+	
+	public static final DeferredItem<Item> FLUXIUM_DRILL = ITEMS.register("fluxium_drill",
+			() -> new MartianDrillItem( 6, -1.7F, ModToolMaterials.MARTIAN,
+					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+	
+	public static final DeferredItem<Item> RED_FLUXIUM_DRILL = ITEMS.register("red_fluxium_drill",
+			() -> new MartianDrillItem(6, -1.7F, ModToolMaterials.MARTIAN,
+					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+	
+	public static final DeferredItem<Item> YELLOW_FLUXIUM_DRILL = ITEMS.register("yellow_fluxium_drill",
+			() -> new MartianDrillItem(6, -1.7F, ModToolMaterials.MARTIAN,
+					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+	
+	public static final DeferredItem<Item> GREEN_FLUXIUM_DRILL = ITEMS.register("green_fluxium_drill",
+			() -> new MartianDrillItem(6, -1.7F, ModToolMaterials.MARTIAN,
+					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+	
+	public static final DeferredItem<Item> PURPLE_FLUXIUM_DRILL = ITEMS.register("purple_fluxium_drill",
+			() -> new MartianDrillItem(6, -1.7F, ModToolMaterials.MARTIAN,
+					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
 	
 	//armor
 	public static final DeferredItem<Item> MARTIAN_HELMET = ITEMS.register("martian_helmet",

@@ -1,7 +1,6 @@
 package com.wither.simplymartians.core.util;
 
 import com.wither.simplymartians.SimplyMartians;
-
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -21,6 +20,7 @@ public class TagInit
     
     public static final TagKey<EntityType<?>> MARTIAN = TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(SimplyMartians.MODID, "martian"));
    
+    public static final TagKey<Block> MARTIAN_MINEABLE = BlockTags.create(ResourceLocation.fromNamespaceAndPath(SimplyMartians.MODID, "martian_mineable"));
 
 
 

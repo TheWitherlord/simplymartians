@@ -4,7 +4,7 @@
   "step": "surface_structures",
   "spawn_overrides": {},
   "start_height": {
-    "absolute": -8
+    "absolute": -12
   },
   "terrain_adaptation": "bury",
   "start_pool": "simplymartians:large_meteor",
