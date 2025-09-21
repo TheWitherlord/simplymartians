@@ -110,7 +110,7 @@ public class MartianDrillItem extends DiggerItem {
 								if (checkBlock.getBlock().canHarvestBlock(checkBlock, level, blockpos.offset(x, y, z),
 										player)) {
 									level.destroyBlock(blockpos.offset(x, y, z), true);
-									level.playSound(player, blockpos, SoundEvents.ALLAY_DEATH, SoundSource.BLOCKS, 1.0F,
+									level.playSound(player, blockpos, SoundEvents.METAL_BREAK, SoundSource.BLOCKS, 0.8F,
 											1.0F);
 
 								}
