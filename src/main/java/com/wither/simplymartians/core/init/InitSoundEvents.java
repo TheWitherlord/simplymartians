@@ -19,7 +19,7 @@ public class InitSoundEvents {
 	private static boolean isInitialised;
 
 
-
+	public static final Supplier<SoundEvent> FLUXIUM_DRILL = registerSoundEvent("item.fluxium_drill.drill");
 	public static final Supplier<SoundEvent> LASER_SHOOT = registerSoundEvent("item.martian_zapper.fire");
 	public static final Supplier<SoundEvent> MARTIAN_AMBIENT = registerSoundEvent("mob.martian.ambient");
 	public static final Supplier<SoundEvent> MARTIAN_HURT = registerSoundEvent("mob.martian.hurt");

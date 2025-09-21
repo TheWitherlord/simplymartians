@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import com.google.common.collect.ImmutableList;
+import com.wither.simplymartians.core.init.InitSoundEvents;
 import com.wither.simplymartians.core.util.TagInit;
 
 import net.minecraft.core.BlockPos;
@@ -26,6 +27,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TieredItem;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.item.context.UseOnContext;
@@ -110,7 +112,7 @@ public class MartianDrillItem extends DiggerItem {
 								if (checkBlock.getBlock().canHarvestBlock(checkBlock, level, blockpos.offset(x, y, z),
 										player)) {
 									level.destroyBlock(blockpos.offset(x, y, z), true);
-									level.playSound(player, blockpos, SoundEvents.METAL_BREAK, SoundSource.BLOCKS, 0.8F,
+									level.playSound(player, blockpos, InitSoundEvents.FLUXIUM_DRILL.get(), SoundSource.BLOCKS, 0.8F,
 											1.0F);
 
 								}
@@ -121,9 +123,28 @@ public class MartianDrillItem extends DiggerItem {
 				context.getItemInHand().hurtAndBreak(1, player, LivingEntity.getSlotForHand(context.getHand()));
 
 			}
+            player.startUsingItem(context.getHand());
+
 			return InteractionResult.sidedSuccess(level.isClientSide);
 		}
 	}
+	
+	
+	 @Override
+	    public int getUseDuration(ItemStack stack, LivingEntity entity) {
+	        return 20;
+	    }
+
+	    /**
+	     * Returns the action that specifies what animation to play when the item is being used.
+	     */
+	    @Override
+	    public UseAnim getUseAnimation(ItemStack stack) {
+	        return UseAnim.BOW;
+	    }
+	
+	
+	
 
 	private static Tool createTool(final Tier tier) {
 		final var rules = ImmutableList.<Tool.Rule>builder()

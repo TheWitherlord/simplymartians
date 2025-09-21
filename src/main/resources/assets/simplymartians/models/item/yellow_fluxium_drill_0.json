@@ -1,0 +1,6 @@
+{
+    "parent": "simplymartians:item/yellow_fluxium_drill",
+    "textures": {
+        "layer0": "simplymartians:item/yellow_fluxium_drill_0"
+    }
+}
