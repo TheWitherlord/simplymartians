@@ -7,9 +7,14 @@ import com.google.common.collect.ImmutableList;
 import com.wither.simplymartians.core.util.TagInit;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
@@ -23,9 +28,11 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.Tool;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 
@@ -38,107 +45,94 @@ import net.neoforged.neoforge.common.ItemAbility;
  * @author Choonster
  */
 public class MartianDrillItem extends DiggerItem {
-	/**
-	 * The speed at which Cobwebs are harvested
-	 */
+
+	private static final int COOLDOWN = 25;
 	private static final float DIG_SPEED_COBWEB = 15.0f;
-
-	/**
-	 * The speed at which Sword-efficient blocks are harvested
-	 */
 	private static final float DIG_SPEED_SWORD = 1.5f;
-
-	/**
-	 * The speed at which blocks are harvested if this isn't their correct tool
-	 */
 	private static final float DIG_SPEED_DEFAULT = 1.0f;
-
-	/**
-	 * The base attack damage before the {@link Tier}'s attack damage is factored in
-	 */
-	private static final float BASE_ATTACK_DAMAGE = 3.0f;
-
-	/**
-	 * The attack speed
-	 */
-	private static final float ATTACK_SPEED = -2.4f;
-
 	public MartianDrillItem(int i, float f, final Tier tier, final Item.Properties properties) {
 		super(tier, TagInit.MARTIAN_MINEABLE, properties.component(DataComponents.TOOL, createTool(tier)));
 	}
-	
-	
 
+	protected int getCooldown(final InteractionHand interactionHand) {
+		return COOLDOWN;
+	}
 
-	public static ItemAttributeModifiers createAttributes(Tier pTier, float pAttackDamage, float pAttackSpeed, float f) {
-        return ItemAttributeModifiers.builder()
-            .add(
-                Attributes.ATTACK_DAMAGE,
-                new AttributeModifier(BASE_ATTACK_DAMAGE_ID, (double)(pAttackDamage + pTier.getAttackDamageBonus()), AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-            )
-            .add(
-                Attributes.ATTACK_SPEED,
-                new AttributeModifier(BASE_ATTACK_SPEED_ID, (double)pAttackSpeed, AttributeModifier.Operation.ADD_VALUE),
-                EquipmentSlotGroup.MAINHAND
-            )
-            .add(
-                    Attributes.BLOCK_INTERACTION_RANGE,
-                    new AttributeModifier(ResourceLocation.withDefaultNamespace("player.entity_interaction_range"), 2.0, AttributeModifier.Operation.ADD_VALUE),
-                    EquipmentSlotGroup.MAINHAND
-            )
-            .build();
-    }
+	public static ItemAttributeModifiers createAttributes(Tier pTier, float pAttackDamage, float pAttackSpeed,
+			float f) {
+		return ItemAttributeModifiers.builder()
+				.add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID,
+						(double) (pAttackDamage + pTier.getAttackDamageBonus()), AttributeModifier.Operation.ADD_VALUE),
+						EquipmentSlotGroup.MAINHAND)
+				.add(Attributes.ATTACK_SPEED,
+						new AttributeModifier(BASE_ATTACK_SPEED_ID, (double) pAttackSpeed,
+								AttributeModifier.Operation.ADD_VALUE),
+						EquipmentSlotGroup.MAINHAND)
+				.add(Attributes.BLOCK_INTERACTION_RANGE,
+						new AttributeModifier(ResourceLocation.withDefaultNamespace("player.entity_interaction_range"),
+								2.0, AttributeModifier.Operation.ADD_VALUE),
+						EquipmentSlotGroup.MAINHAND)
+				.build();
+	}
 
 	@Override
 	public boolean canPerformAction(final ItemStack stack, final ItemAbility toolAction) {
-		return Stream.of(
-				ItemAbilities.DEFAULT_SWORD_ACTIONS,
-				ItemAbilities.DEFAULT_PICKAXE_ACTIONS,
-				ItemAbilities.DEFAULT_AXE_ACTIONS,
-				ItemAbilities.DEFAULT_SHOVEL_ACTIONS
-		).anyMatch(toolActions -> toolActions.contains(toolAction));
+		return Stream
+				.of(ItemAbilities.DEFAULT_SWORD_ACTIONS, ItemAbilities.DEFAULT_PICKAXE_ACTIONS,
+						ItemAbilities.DEFAULT_AXE_ACTIONS, ItemAbilities.DEFAULT_SHOVEL_ACTIONS)
+				.anyMatch(toolActions -> toolActions.contains(toolAction));
 	}
 
-	
-	
 	@Override
-    public boolean mineBlock(ItemStack stack, Level world, BlockState state, BlockPos pos, LivingEntity entityLiving) {
-        boolean itemUsed = false;
+	public InteractionResult useOn(UseOnContext context) {
+		Level level = context.getLevel();
+		BlockPos blockpos = context.getClickedPos();
+		BlockState blockstate = level.getBlockState(blockpos);
+		
+		if (context.getClickedFace() == Direction.DOWN) {
+			return InteractionResult.PASS;
+		
+			
+		} else {
+			Player player = context.getPlayer();
 
-        if (!(entityLiving instanceof Player player)) return false;
+			final int cooldown = getCooldown(context.getHand());
+			if (cooldown > 0) {
+				player.getCooldowns().addCooldown(this, cooldown);
+			}
 
-        if (state.is(TagInit.MARTIAN_MINEABLE)) {
-        	 for (int x = -1; x <= 1; x++) {
-                 for (int y = -1; y <= 1; y++) {
-                     for (int z = -1; z <= 1; z++) {
-                        BlockState checkBlock = world.getBlockState(pos.offset(x, y, z));
-                        if (checkBlock.is(TagInit.MARTIAN_MINEABLE) && !player.isCrouching()) {
-                            if (checkBlock.getBlock().canHarvestBlock(checkBlock, world, pos.offset(x, y, z), player)) {
-                                world.destroyBlock(pos.offset(x, y, z), true);
-                       
-                            }
-                            itemUsed = true;
-                        }
-                    }
-                }
-            }
-            if (itemUsed) stack.hurtAndBreak(9, player, EquipmentSlot.MAINHAND);
-            return itemUsed;
-        }
-		return itemUsed;
-        }
+			if (blockstate.is(TagInit.MARTIAN_MINEABLE)) {
+				for (int x = -1; x <= 1; x++) {
+					for (int y = -1; y <= 1; y++) {
+						for (int z = -1; z <= 1; z++) {
+							BlockState checkBlock = level.getBlockState(blockpos.offset(x, y, z));
+							if (checkBlock.is(TagInit.MARTIAN_MINEABLE)) {
+								if (checkBlock.getBlock().canHarvestBlock(checkBlock, level, blockpos.offset(x, y, z),
+										player)) {
+									level.destroyBlock(blockpos.offset(x, y, z), true);
+									level.playSound(player, blockpos, SoundEvents.ALLAY_DEATH, SoundSource.BLOCKS, 1.0F,
+											1.0F);
+
+								}
+							}
+						}
+					}
+				}
+				context.getItemInHand().hurtAndBreak(1, player, LivingEntity.getSlotForHand(context.getHand()));
+
+			}
+			return InteractionResult.sidedSuccess(level.isClientSide);
+		}
+	}
 
 	private static Tool createTool(final Tier tier) {
 		final var rules = ImmutableList.<Tool.Rule>builder()
 				.add(Tool.Rule.deniesDrops(tier.getIncorrectBlocksForDrops()));
 
-		final var minesAndDrops = Stream.of(
-				BlockTags.MINEABLE_WITH_AXE,
-				BlockTags.MINEABLE_WITH_HOE,
-				BlockTags.MINEABLE_WITH_PICKAXE,
-				BlockTags.MINEABLE_WITH_SHOVEL
-		).map(tag -> Tool.Rule.minesAndDrops(BlockTags.MINEABLE_WITH_AXE, tier.getSpeed()));
+		final var minesAndDrops = Stream
+				.of(BlockTags.MINEABLE_WITH_AXE, BlockTags.MINEABLE_WITH_HOE, BlockTags.MINEABLE_WITH_PICKAXE,
+						BlockTags.MINEABLE_WITH_SHOVEL)
+				.map(tag -> Tool.Rule.minesAndDrops(BlockTags.MINEABLE_WITH_AXE, tier.getSpeed()));
 
 		rules.addAll(minesAndDrops.iterator());
 
