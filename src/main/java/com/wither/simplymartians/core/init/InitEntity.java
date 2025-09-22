@@ -8,6 +8,9 @@ import com.wither.simplymartians.entities.MartianBruteEntity;
 import com.wither.simplymartians.entities.MartianProbeEntity;
 import com.wither.simplymartians.entities.SimpleMartianEntity;
 import com.wither.simplymartians.entities.ZapBolt;
+import com.wither.simplymartians.entities.ZombieMartianBruteEntity;
+import com.wither.simplymartians.entities.ZombieMartianEntity;
+
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -42,6 +45,14 @@ public class InitEntity {
 			.register("martian_brute", () -> EntityType.Builder.of(MartianBruteEntity::new, MobCategory.MONSTER)
 					.sized(0.6F, 2F).clientTrackingRange(8).eyeHeight(1.6f).build(prefix("martian_brute")));
 	
+	public static final Supplier<EntityType<ZombieMartianEntity>> ZOMBIE_MARTIAN = ENTITIES_REGISTRY
+			.register("zombie_martian", () -> EntityType.Builder.of(ZombieMartianEntity::new, MobCategory.MONSTER)
+					.sized(0.6F, 1.99F).clientTrackingRange(8).eyeHeight(1.55f).build(prefix("zombie_martian")));
+	
+	public static final Supplier<EntityType<ZombieMartianBruteEntity>> ZOMBIE_MARTIAN_BRUTE = ENTITIES_REGISTRY
+			.register("zombie_martian_brute", () -> EntityType.Builder.of(ZombieMartianBruteEntity::new, MobCategory.MONSTER)
+					.sized(0.6F, 2F).clientTrackingRange(8).eyeHeight(1.6f).build(prefix("zombie_martian_brute")));
+	
 	public static final Supplier<EntityType<FluxWave>> FLUX_WAVE = ENTITIES_REGISTRY.register("flux_wave",
 			() -> EntityType.Builder.<FluxWave>of(FluxWave::new, MobCategory.MISC).sized(2F, 1F)
 					.clientTrackingRange(4).updateInterval(10).build(prefix("flux_wave")));
@@ -61,7 +72,9 @@ public class InitEntity {
 		event.put(MARTIAN.get(), SimpleMartianEntity.createAttributes().build());
 		event.put(MARTIAN_BRUTE.get(), MartianBruteEntity.createAttributes().build());
 		event.put(MARTIAN_PROBE.get(), MartianProbeEntity.createAttributes().build());
-		
+		event.put(ZOMBIE_MARTIAN.get(), ZombieMartianEntity.createAttributes().build());
+		event.put(ZOMBIE_MARTIAN_BRUTE.get(), ZombieMartianBruteEntity.createAttributes().build());
+
 	}
 		@SubscribeEvent
 		public static void registerSpawnPlacement(RegisterSpawnPlacementsEvent event) {
