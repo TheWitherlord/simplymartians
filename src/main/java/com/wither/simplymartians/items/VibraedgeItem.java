@@ -40,7 +40,6 @@ public class VibraedgeItem extends SwordItem {
 	@Override
 	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
 		 target.addEffect(new MobEffectInstance(ModMobEffects.OVERSHOCK, 55, 0, true, true));
-		 attacker.addEffect(new MobEffectInstance(MobEffects.JUMP, 120, 3, true, true));
 
 		return super.hurtEnemy(stack, target, attacker);
 	}

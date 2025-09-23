@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "simplymartians:block/green_fluxium_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "simplymartians:block/green_fluxium_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "simplymartians:block/green_fluxium_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "simplymartians:block/green_fluxium_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "simplymartians:block/green_fluxium_cluster"
+    },
+    "facing=west": {
+      "model": "simplymartians:block/green_fluxium_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

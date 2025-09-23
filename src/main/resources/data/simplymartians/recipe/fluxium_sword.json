@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " g ",
+        "Igg",
+        "iI "
+    ],
+    "key": {
+        "g": {
+            "item": "simplymartians:refined_fluxium"
+        },
+        "I": {
+            "item": "minecraft:iron_nugget"
+        },
+        "i": {
+            "item": "minecraft:iron_ingot"
+        }
+    },
+    "result": {
+        "id": "simplymartians:fluxium_sword",
+        "count": 1
+    }
+}

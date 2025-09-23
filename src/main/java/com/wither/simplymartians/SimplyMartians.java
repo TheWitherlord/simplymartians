@@ -13,6 +13,8 @@ import com.wither.simplymartians.core.init.InitSoundEvents;
 import com.wither.simplymartians.core.init.ModArmorMaterials;
 import com.wither.simplymartians.core.init.ModMobEffects;
 import com.wither.simplymartians.core.init.ModParticleTypes;
+import com.wither.simplymartians.core.util.ItemModelProperties;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -46,7 +48,7 @@ public class SimplyMartians {
 	  public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ALIEN_TAB = CREATIVE_MODE_TABS.register("alien_tab", () -> CreativeModeTab.builder()
 	            .title(Component.translatable("itemGroup.simplymartians")) //The language key for the title of your CreativeModeTab
 	            .withTabsBefore(CreativeModeTabs.COMBAT)
-	            .icon(() -> InitItem.MARTIAN_TECH.get().getDefaultInstance())
+	            .icon(() -> InitItem.MARTIAN_ZAPPER.get().getDefaultInstance())
 	            .displayItems((parameters, output) -> {
 	            	List<ItemStack> stacks = InitItem.ITEMS.getEntries().stream().map(reg -> new ItemStack(reg.get())).toList();
 					output.acceptAll(stacks);
@@ -99,7 +101,7 @@ public class SimplyMartians {
 		        @SubscribeEvent
 		        public static void onClientSetup(FMLClientSetupEvent event)
 		        {
-		    		//ItemModelProperties.defineRenders();
+		    		ItemModelProperties.defineRenders();
 
 		            // Some client setup code
 		            LOGGER.info("HELLO FROM CLIENT SETUP");

@@ -1,7 +1,5 @@
 package com.wither.simplymartians.items;
 
-import com.wither.simplymartians.core.init.ModMobEffects;
-
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,7 +15,7 @@ public class MartianSwordItem extends SwordItem{
 	
 	@Override
 	public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-		 target.addEffect(new MobEffectInstance(ModMobEffects.OVERSHOCK, 45, 0, true, true));
+		 attacker.addEffect(new MobEffectInstance(MobEffects.JUMP, 120, 4, true, true));
 
 		return super.hurtEnemy(stack, target, attacker);
 	}

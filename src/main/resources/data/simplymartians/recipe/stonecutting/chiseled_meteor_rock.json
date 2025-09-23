@@ -1,0 +1,10 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "simplymartians:meteor_rock"
+    },
+    "result": {
+        "id": "simplymartians:chiseled_meteor_rock",
+        "count": 1
+    }
+}

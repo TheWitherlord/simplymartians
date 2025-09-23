@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "simplymartians:block/medium_red_fluxium_bud"
+  }
+}

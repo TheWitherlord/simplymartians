@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "simplymartians:block/large_yellow_fluxium_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "simplymartians:block/large_yellow_fluxium_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "simplymartians:block/large_yellow_fluxium_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "simplymartians:block/large_yellow_fluxium_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "simplymartians:block/large_yellow_fluxium_bud"
+    },
+    "facing=west": {
+      "model": "simplymartians:block/large_yellow_fluxium_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

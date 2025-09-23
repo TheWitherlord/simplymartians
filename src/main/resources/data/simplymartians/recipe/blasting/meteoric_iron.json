@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:blasting",
+    "ingredient": {
+        "item": "simplymartians:meteoric_iron_ore"
+    },
+    "result": {
+        "id": "minecraft:iron_ingot",
+          "count": 2
+
+    },
+    "experience": 0.6,
+    "cookingtime": 100
+}

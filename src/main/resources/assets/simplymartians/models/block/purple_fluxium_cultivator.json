@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "simplymartians:block/purple_fluxium_cultivator"
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "##",
+        "##"
+    ],
+    "key": {
+        "#": {
+            "item": "simplymartians:meteor_rock"
+        }
+    },
+    "result": {
+        "id": "simplymartians:polished_meteor_rock",
+        "count": 4
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "g g",
+        "cic",
+        "ici"
+    ],
+    "key": {
+        "g": {
+            "item": "simplymartians:refined_fluxium"
+        },
+        "c": {
+            "item": "simplymartians:martian_space_plates"
+        },
+        "i": {
+            "item": "minecraft:iron_ingot"
+        }
+    },
+    "result": {
+        "id": "simplymartians:martian_chestplate",
+        "count": 1
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "simplymartians:block/blue_fluxium_cluster"
+  }
+}

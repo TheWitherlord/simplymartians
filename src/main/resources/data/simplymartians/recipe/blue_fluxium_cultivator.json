@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#c#",
+        "iRi",
+        "#c#"
+    ],
+    "key": {
+        "#": {
+            "item": "simplymartians:martian_space_plating"
+        },
+        "c": {
+            "item": "simplymartians:refined_fluxium"
+        },
+        "i": {
+            "item": "minecraft:iron_ingot"
+        },
+        "R": {
+            "item": "simplymartians:unrefined_fluxium"
+        }
+    },
+    "result": {
+        "id": "simplymartians:blue_fluxium_cultivator",
+        "count": 1
+    }
+}

@@ -26,7 +26,7 @@
               "function": "minecraft:enchanted_count_increase"
             }
           ],
-          "name": "simplymartians:martian_space_plating"
+          "name": "simplymartians:martian_space_plates"
         }
       ],
       "rolls": 1
@@ -100,5 +100,5 @@
       ]
     }
   ],
-  "random_sequence": "minecraft:entities/zombie"
+  "random_sequence": "simplymartians:entities/martian_brute"
 }

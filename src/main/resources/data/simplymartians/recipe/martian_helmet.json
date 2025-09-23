@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "# #",
+        "cgc"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:glass"
+        },
+        "c": {
+            "item": "simplymartians:martian_space_plates"
+        },
+        "g": {
+            "item": "simplymartians:refined_fluxium"
+        }
+    },
+    "result": {
+        "id": "simplymartians:martian_helmet",
+        "count": 1
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "  g",
+        "IP ",
+        "iR "
+    ],
+    "key": {
+        "g": {
+            "item": "simplymartians:refined_fluxium"
+        },
+        "I": {
+            "item": "minecraft:iron_nugget"
+        },
+        "P": {
+            "item": "simplymartians:red_fluxium_crystal"
+        },
+        "i": {
+            "item": "minecraft:iron_ingot"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        }
+    },
+    "result": {
+        "id": "simplymartians:red_vibraedge",
+        "count": 1
+    }
+}

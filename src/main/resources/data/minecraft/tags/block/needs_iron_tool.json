@@ -1,0 +1,31 @@
+{
+  "values": [
+  "simplymartians:meteoric_iron_ore",
+ "simplymartians:blue_fluxium_cultivator",
+ "simplymartians:red_fluxium_cultivator",
+ "simplymartians:yellow_fluxium_cultivator",
+ "simplymartians:green_fluxium_cultivator",
+ "simplymartians:purple_fluxium_cultivator",
+ "simplymartians:small_blue_fluxium_bud",
+ "simplymartians:medium_blue_fluxium_bud",
+ "simplymartians:large_blue_fluxium_bud",
+ "simplymartians:blue_fluxium_cluster",
+"simplymartians:small_red_fluxium_bud",
+ "simplymartians:medium_red_fluxium_bud",
+ "simplymartians:large_red_fluxium_bud",
+ "simplymartians:red_fluxium_cluster",
+"simplymartians:small_yellow_fluxium_bud",
+ "simplymartians:medium_yellow_fluxium_bud",
+ "simplymartians:large_yellow_fluxium_bud",
+ "simplymartians:yellow_fluxium_cluster",
+"simplymartians:small_green_fluxium_bud",
+ "simplymartians:medium_green_fluxium_bud",
+ "simplymartians:large_green_fluxium_bud",
+ "simplymartians:green_fluxium_cluster",
+"simplymartians:small_purple_fluxium_bud",
+ "simplymartians:medium_purple_fluxium_bud",
+ "simplymartians:large_purple_fluxium_bud",
+ "simplymartians:purple_fluxium_cluster"
+
+     ]
+}

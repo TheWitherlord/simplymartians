@@ -14,7 +14,11 @@
  "simplymartians:martian_flooring_slab",
  "simplymartians:martian_flooring_stairs",
  "simplymartians:martian_interior_slab",
- "simplymartians:martian_interior_stairs"
+ "simplymartians:martian_interior_stairs",
+"simplymartians:tektite",
+ "simplymartians:tektite_bricks",
+ "simplymartians:fluxium_ore"
+
 
 
 

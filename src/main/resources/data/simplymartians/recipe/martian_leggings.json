@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "gig",
+        "c c",
+        "i i"
+    ],
+    "key": {
+        "g": {
+            "item": "simplymartians:refined_fluxium"
+        },
+        "i": {
+            "item": "minecraft:iron_ingot"
+        },
+        "c": {
+            "item": "simplymartians:martian_space_plates"
+        }
+    },
+    "result": {
+        "id": "simplymartians:martian_leggings",
+        "count": 1
+    }
+}

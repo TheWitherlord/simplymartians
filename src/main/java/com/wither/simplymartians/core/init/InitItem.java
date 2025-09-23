@@ -35,6 +35,9 @@ public class InitItem {
 	public static final DeferredItem<Item> UNREFINED_FLUXIUM = ITEMS.register("unrefined_fluxium",
 			() -> new Item(itemBuilder().stacksTo(64)));
 	
+	public static final DeferredItem<Item> REFINED_FLUXIUM = ITEMS.register("refined_fluxium",
+			() -> new Item(itemBuilder().stacksTo(64)));
+	
 	public static final DeferredItem<Item> BLUE_FLUXIUM_CRYSTAL = ITEMS.register("blue_fluxium_crystal",
 			() -> new Item(itemBuilder().stacksTo(64)));
 	
@@ -60,33 +63,33 @@ public class InitItem {
 					itemBuilder().stacksTo(1).durability(250).rarity(Rarity.RARE).fireResistant()));
 	
 	public static final DeferredItem<Item> VIBRAEDGE = ITEMS.register("vibraedge",
-			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 6, -1.7F,
+			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 7, -2.0F,
 					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
-							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 7, -1.7F))));
 	
 	public static final DeferredItem<Item> RED_VIBRAEDGE = ITEMS.register("red_vibraedge",
-			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 6, -1.7F,
+			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 7, -2.0F,
 					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
-							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 7, -1.7F))));
 	
 	public static final DeferredItem<Item> YELLOW_VIBRAEDGE = ITEMS.register("yellow_vibraedge",
-			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 6, -1.7F,
+			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 7, -2.0F,
 					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
-							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 7, -1.7F))));
 	
 	public static final DeferredItem<Item> GREEN_VIBRAEDGE = ITEMS.register("green_vibraedge",
-			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 6, -1.7F,
+			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 7, -2.0F,
 					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
-							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 7, -1.7F))));
 	
 	public static final DeferredItem<Item> PURPLE_VIBRAEDGE = ITEMS.register("purple_vibraedge",
-			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 6, -1.7F,
+			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 7, -2.0F,
 					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
-							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 7, -1.7F))));
 	
 	public static final DeferredItem<Item> FLUXIUM_SWORD = ITEMS.register("fluxium_sword",
 			() -> new VibraedgeItem(ModToolMaterials.MARTIAN, itemBuilder().rarity(Rarity.RARE).fireResistant()
-							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 7, -2.0f))));
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 8, -2.2f))));
 	
 	public static final DeferredItem<Item> AURAFORCE = ITEMS.register("auraforce",
 			() -> new AuraforceItem(ModToolMaterials.MARTIAN, itemBuilder().rarity(Rarity.EPIC).fireResistant()
@@ -101,29 +104,29 @@ public class InitItem {
 	//martian tools
 	
 	public static final DeferredItem<Item> FLUXIUM_DRILL = ITEMS.register("fluxium_drill",
-			() -> new MartianDrillItem( 6, -1.7F, ModToolMaterials.MARTIAN,
+			() -> new MartianDrillItem(3, -1.2F, ModToolMaterials.MARTIAN,
 					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
-							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 3, -1.2F))));
 	
 	public static final DeferredItem<Item> RED_FLUXIUM_DRILL = ITEMS.register("red_fluxium_drill",
-			() -> new MartianDrillItem(6, -1.7F, ModToolMaterials.MARTIAN,
+			() -> new MartianDrillItem(3, -1.2F, ModToolMaterials.MARTIAN,
 					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
-							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 3, -1.2F))));
 	
 	public static final DeferredItem<Item> YELLOW_FLUXIUM_DRILL = ITEMS.register("yellow_fluxium_drill",
-			() -> new MartianDrillItem(6, -1.7F, ModToolMaterials.MARTIAN,
+			() -> new MartianDrillItem(3, -1.2F, ModToolMaterials.MARTIAN,
 					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
-							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 3, -1.2F))));
 	
 	public static final DeferredItem<Item> GREEN_FLUXIUM_DRILL = ITEMS.register("green_fluxium_drill",
-			() -> new MartianDrillItem(6, -1.7F, ModToolMaterials.MARTIAN,
+			() -> new MartianDrillItem(3, -1.2F, ModToolMaterials.MARTIAN,
 					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
-							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 3, -1.2F))));
 	
 	public static final DeferredItem<Item> PURPLE_FLUXIUM_DRILL = ITEMS.register("purple_fluxium_drill",
-			() -> new MartianDrillItem(6, -1.7F, ModToolMaterials.MARTIAN,
+			() -> new MartianDrillItem(3, -1.2F, ModToolMaterials.MARTIAN,
 					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
-							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 6, -1.7F))));
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 3, -1.2F))));
 	
 	//armor
 	public static final DeferredItem<Item> MARTIAN_HELMET = ITEMS.register("martian_helmet",
@@ -169,11 +172,110 @@ public class InitItem {
 	public static final DeferredItem<Item> METEOR_ROCK = ITEMS.register("meteor_rock",
 			() -> new BlockItem(InitBlocks.METEOR_ROCK.get(), itemBuilder().stacksTo(64)));
 	
+	public static final DeferredItem<Item> METEOR_ROCK_BRICKS = ITEMS.register("meteor_rock_bricks",
+			() -> new BlockItem(InitBlocks.METEOR_ROCK_BRICKS.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> CHISELED_METEOR_ROCK = ITEMS.register("chiseled_meteor_rock",
+			() -> new BlockItem(InitBlocks.CHISELED_METEOR_ROCK.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> POLISHED_METEOR_ROCK = ITEMS.register("polished_meteor_rock",
+			() -> new BlockItem(InitBlocks.POLISHED_METEOR_ROCK.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> METEORIC_IRON_ORE = ITEMS.register("meteoric_iron_ore",
+			() -> new BlockItem(InitBlocks.METEORIC_IRON_ORE.get(), itemBuilder().stacksTo(64)));
+	
 	public static final DeferredItem<Item> FLUXIUM_ORE = ITEMS.register("fluxium_ore",
 			() -> new BlockItem(InitBlocks.FLUXIUM_ORE.get(), itemBuilder().stacksTo(64)));
 	
 	public static final DeferredItem<Item> TEKTITE = ITEMS.register("tektite",
 			() -> new BlockItem(InitBlocks.TEKTITE.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> TEKTITE_BRICKS = ITEMS.register("tektite_bricks",
+			() -> new BlockItem(InitBlocks.TEKTITE_BRICKS.get(), itemBuilder().stacksTo(64)));
+	
+	
+	//fluxium cultivators
+	
+	public static final DeferredItem<Item> BLUE_FLUXIUM_CULTIVATOR = ITEMS.register("blue_fluxium_cultivator",
+			() -> new BlockItem(InitBlocks.BLUE_FLUXIUM_CULTIVATOR.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> RED_FLUXIUM_CULTIVATOR = ITEMS.register("red_fluxium_cultivator",
+			() -> new BlockItem(InitBlocks.RED_FLUXIUM_CULTIVATOR.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> YELLOW_FLUXIUM_CULTIVATOR = ITEMS.register("yellow_fluxium_cultivator",
+			() -> new BlockItem(InitBlocks.YELLOW_FLUXIUM_CULTIVATOR.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> GREEN_FLUXIUM_CULTIVATOR = ITEMS.register("green_fluxium_cultivator",
+			() -> new BlockItem(InitBlocks.GREEN_FLUXIUM_CULTIVATOR.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> PURPLE_FLUXIUM_CULTIVATOR = ITEMS.register("purple_fluxium_cultivator",
+			() -> new BlockItem(InitBlocks.PURPLE_FLUXIUM_CULTIVATOR.get(), itemBuilder().stacksTo(64)));
+	
+	
+	//fluxium crystals
+	
+	public static final DeferredItem<Item> SMALL_BLUE_FLUXIUM_BUD = ITEMS.register("small_blue_fluxium_bud",
+			() -> new BlockItem(InitBlocks.SMALL_BLUE_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> MEDIUM_BLUE_FLUXIUM_BUD = ITEMS.register("medium_blue_fluxium_bud",
+			() -> new BlockItem(InitBlocks.MEDIUM_BLUE_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> LARGE_BLUE_FLUXIUM_BUD = ITEMS.register("large_blue_fluxium_bud",
+			() -> new BlockItem(InitBlocks.LARGE_BLUE_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> BLUE_FLUXIUM_CLUSTER = ITEMS.register("blue_fluxium_cluster",
+			() -> new BlockItem(InitBlocks.BLUE_FLUXIUM_CLUSTER.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> SMALL_RED_FLUXIUM_BUD = ITEMS.register("small_red_fluxium_bud",
+			() -> new BlockItem(InitBlocks.SMALL_RED_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> MEDIUM_RED_FLUXIUM_BUD = ITEMS.register("medium_red_fluxium_bud",
+			() -> new BlockItem(InitBlocks.MEDIUM_RED_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> LARGE_RED_FLUXIUM_BUD = ITEMS.register("large_red_fluxium_bud",
+			() -> new BlockItem(InitBlocks.LARGE_RED_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> RED_FLUXIUM_CLUSTER = ITEMS.register("red_fluxium_cluster",
+			() -> new BlockItem(InitBlocks.RED_FLUXIUM_CLUSTER.get(), itemBuilder().stacksTo(64)));
+	
+	
+	public static final DeferredItem<Item> SMALL_YELLOW_FLUXIUM_BUD = ITEMS.register("small_yellow_fluxium_bud",
+			() -> new BlockItem(InitBlocks.SMALL_YELLOW_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> MEDIUM_YELLOW_FLUXIUM_BUD = ITEMS.register("medium_yellow_fluxium_bud",
+			() -> new BlockItem(InitBlocks.MEDIUM_YELLOW_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> LARGE_YELLOW_FLUXIUM_BUD = ITEMS.register("large_yellow_fluxium_bud",
+			() -> new BlockItem(InitBlocks.LARGE_YELLOW_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> YELLOW_FLUXIUM_CLUSTER = ITEMS.register("yellow_fluxium_cluster",
+			() -> new BlockItem(InitBlocks.YELLOW_FLUXIUM_CLUSTER.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> SMALL_GREEN_FLUXIUM_BUD = ITEMS.register("small_green_fluxium_bud",
+			() -> new BlockItem(InitBlocks.SMALL_GREEN_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> MEDIUM_GREEN_FLUXIUM_BUD = ITEMS.register("medium_green_fluxium_bud",
+			() -> new BlockItem(InitBlocks.MEDIUM_GREEN_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> LARGE_GREEN_FLUXIUM_BUD = ITEMS.register("large_green_fluxium_bud",
+			() -> new BlockItem(InitBlocks.LARGE_GREEN_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> GREEN_FLUXIUM_CLUSTER = ITEMS.register("green_fluxium_cluster",
+			() -> new BlockItem(InitBlocks.GREEN_FLUXIUM_CLUSTER.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> SMALL_PURPLE_FLUXIUM_BUD = ITEMS.register("small_purple_fluxium_bud",
+			() -> new BlockItem(InitBlocks.SMALL_PURPLE_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> MEDIUM_PURPLE_FLUXIUM_BUD = ITEMS.register("medium_purple_fluxium_bud",
+			() -> new BlockItem(InitBlocks.MEDIUM_PURPLE_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> LARGE_PURPLE_FLUXIUM_BUD = ITEMS.register("large_purple_fluxium_bud",
+			() -> new BlockItem(InitBlocks.LARGE_PURPLE_FLUXIUM_BUD.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> PURPLE_FLUXIUM_CLUSTER = ITEMS.register("purple_fluxium_cluster",
+			() -> new BlockItem(InitBlocks.PURPLE_FLUXIUM_CLUSTER.get(), itemBuilder().stacksTo(64)));
+	
+	
 	
 	//slabs and stairs
 	

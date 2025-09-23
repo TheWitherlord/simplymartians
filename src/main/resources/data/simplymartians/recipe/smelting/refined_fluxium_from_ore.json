@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "item": "simplymartians:fluxium_ore"
+    },
+    "result": {
+        "id": "simplymartians:refined_fluxium"
+    },
+    "experience": 1.2,
+    "cookingtime": 200
+}

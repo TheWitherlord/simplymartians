@@ -1,8 +1,10 @@
 package com.wither.simplymartians.core.util;
 
 import com.wither.simplymartians.SimplyMartians;
+import com.wither.simplymartians.core.init.InitBlocks;
 import com.wither.simplymartians.core.init.InitItem;
-
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
@@ -16,6 +18,68 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
 public class ItemModelProperties {
 	
+	@SuppressWarnings("deprecation")
+	public static void defineRenders()
+	{
+		RenderType cutoutMipped = RenderType.cutoutMipped();
+		RenderType translucent = RenderType.translucent();
+		
+		
+
+
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.BLUE_FLUXIUM_CLUSTER.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.LARGE_BLUE_FLUXIUM_BUD.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.MEDIUM_BLUE_FLUXIUM_BUD.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.SMALL_BLUE_FLUXIUM_BUD.get(), translucent);
+		
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.RED_FLUXIUM_CLUSTER.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.LARGE_RED_FLUXIUM_BUD.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.MEDIUM_RED_FLUXIUM_BUD.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.SMALL_RED_FLUXIUM_BUD.get(), translucent);
+		
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.YELLOW_FLUXIUM_CLUSTER.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.LARGE_YELLOW_FLUXIUM_BUD.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.MEDIUM_YELLOW_FLUXIUM_BUD.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.SMALL_YELLOW_FLUXIUM_BUD.get(), translucent);
+		
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.GREEN_FLUXIUM_CLUSTER.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.LARGE_GREEN_FLUXIUM_BUD.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.MEDIUM_GREEN_FLUXIUM_BUD.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.SMALL_GREEN_FLUXIUM_BUD.get(), translucent);
+		
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.PURPLE_FLUXIUM_CLUSTER.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.LARGE_PURPLE_FLUXIUM_BUD.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.MEDIUM_PURPLE_FLUXIUM_BUD.get(), translucent);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.SMALL_PURPLE_FLUXIUM_BUD.get(), translucent);
+		
+		
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.BLUE_FLUXIUM_CLUSTER.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.LARGE_BLUE_FLUXIUM_BUD.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.MEDIUM_BLUE_FLUXIUM_BUD.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.SMALL_BLUE_FLUXIUM_BUD.get(), cutoutMipped);
+		
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.RED_FLUXIUM_CLUSTER.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.LARGE_RED_FLUXIUM_BUD.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.MEDIUM_RED_FLUXIUM_BUD.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.SMALL_RED_FLUXIUM_BUD.get(), cutoutMipped);
+		
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.YELLOW_FLUXIUM_CLUSTER.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.LARGE_YELLOW_FLUXIUM_BUD.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.MEDIUM_YELLOW_FLUXIUM_BUD.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.SMALL_YELLOW_FLUXIUM_BUD.get(), cutoutMipped);
+		
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.GREEN_FLUXIUM_CLUSTER.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.LARGE_GREEN_FLUXIUM_BUD.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.MEDIUM_GREEN_FLUXIUM_BUD.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.SMALL_GREEN_FLUXIUM_BUD.get(), cutoutMipped);
+		
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.PURPLE_FLUXIUM_CLUSTER.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.LARGE_PURPLE_FLUXIUM_BUD.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.MEDIUM_PURPLE_FLUXIUM_BUD.get(), cutoutMipped);
+		ItemBlockRenderTypes.setRenderLayer(InitBlocks.SMALL_PURPLE_FLUXIUM_BUD.get(), cutoutMipped);
+
+		
+	}
 	
 	@SubscribeEvent
 	public static void setModelPropertiesBlueDrill(FMLClientSetupEvent event) {

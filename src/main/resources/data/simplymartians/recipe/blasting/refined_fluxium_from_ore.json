@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:blasting",
+    "ingredient": {
+        "item": "simplymartians:fluxium_ore"
+    },
+    "result": {
+        "id": "simplymartians:refined_fluxium",
+          "count": 2
+
+    },
+    "experience": 1.2,
+    "cookingtime": 100
+}

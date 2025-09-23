@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "#I#",
+        " # "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:gold_block"
+        },
+        "I": {
+            "item": "simplymartians:blue_fluxium_cultivator"
+        }
+    },
+    "result": {
+        "id": "simplymartians:yellow_fluxium_cultivator",
+        "count": 1
+    }
+}

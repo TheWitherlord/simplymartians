@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "ii ",
+        "iPR",
+        "IiT"
+    ],
+    "key": {
+        "i": {
+            "item": "simplymartians:refined_fluxium"
+        },
+        "P": {
+            "item": "simplymartians:yellow_fluxium_crystal"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "I": {
+            "item": "minecraft:iron_nugget"
+        },
+        "T": {
+            "item": "minecraft:iron_block"
+        }
+    },
+    "result": {
+        "id": "simplymartians:yellow_fluxium_drill",
+        "count": 1
+    }
+}
