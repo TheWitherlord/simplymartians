@@ -1,7 +1,8 @@
 {
   "replace": false,
   "values": [
-     "simplymartians:meteor_rock",
+ "simplymartians:hot_meteor_rock",
+ "simplymartians:meteor_rock",
  "simplymartians:meteor_rock_bricks",
  "simplymartians:chiseled_meteor_rock",
  "simplymartians:polished_meteor_rock"

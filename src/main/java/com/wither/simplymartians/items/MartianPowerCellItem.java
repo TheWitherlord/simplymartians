@@ -42,6 +42,7 @@ public class MartianPowerCellItem extends Item implements ProjectileItem {
      * @return True if the arrow is infinite
      */
     public boolean isInfinite(ItemStack ammo, ItemStack bow, net.minecraft.world.entity.LivingEntity livingEntity) {
+
         return false;
     }
 }

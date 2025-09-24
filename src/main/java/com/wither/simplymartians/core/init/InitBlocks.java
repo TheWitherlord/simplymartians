@@ -10,6 +10,7 @@ import com.wither.simplymartians.blocks.YellowCultivatorBlock;
 
 import net.minecraft.world.level.block.AmethystClusterBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.MagmaBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -61,6 +62,11 @@ public class InitBlocks {
 					.requiresCorrectToolForDrops()));
 	
 	//meteor blocks
+	
+	public static final DeferredBlock<Block> HOT_METEOR_ROCK = BLOCKS.register("hot_meteor_rock",
+			() -> new MagmaBlock(BlockBehaviour.Properties.of().sound(SoundType.STONE).lightLevel((state) -> {
+				return 10;}).strength(6.0F, 1200F)
+					.requiresCorrectToolForDrops()));
 	
 	public static final DeferredBlock<Block> METEOR_ROCK = BLOCKS.register("meteor_rock",
 			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(6.0F, 1200F)

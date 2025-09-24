@@ -4,6 +4,7 @@
   //items
   "item.simplymartians.martian_tech": "Martian Tech",
   "item.simplymartians.martian_space_plates": "Martian Space Plates",
+   "item.simplymartians.meteor_device": "Meteor Device",
   "item.simplymartians.martian_spawn_egg": "Spawn Martian",
   "item.simplymartians.martian_brute_spawn_egg": "Spawn Martian Brute",
     "item.simplymartians.martian_power_cell": "Martian Power Cell",
@@ -50,6 +51,7 @@
       "block.simplymartians.martian_flooring_stairs": "Martian Flooring Stairs",
   "block.simplymartians.martian_interior_slab": "Martian Interior Slab",
       "block.simplymartians.martian_interior_stairs": "Martian Interior Stairs",
+          "block.simplymartians.hot_meteor_rock": "Hot Meteor Rock",
           "block.simplymartians.meteor_rock": "Meteor Rock",
             "block.simplymartians.meteor_rock_bricks": "Meteor Rock Bricks",
               "block.simplymartians.chiseled_meteor_rock": "Chiseled Meteor Rock",
@@ -99,7 +101,8 @@
 
 //tooltips
 "tooltip.simplymartians.zapper.tooltip": "Ammo:",
-"tooltip.simplymartians.zapper.ammo": "Martian Power Cells"
+"tooltip.simplymartians.zapper.ammo": "Martian Power Cells",
+"tooltip.simplymartians.meteor.tooltip": "Summons a Meteor! Use with CAUTION!"
 
 
  }

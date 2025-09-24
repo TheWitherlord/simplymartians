@@ -143,7 +143,7 @@ public class MartianDrillItem extends DiggerItem {
 	        return UseAnim.BOW;
 	    }
 	
-	
+
 	
 
 	private static Tool createTool(final Tier tier) {

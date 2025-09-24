@@ -7,6 +7,7 @@ import com.wither.simplymartians.entities.FluxWave;
 import com.wither.simplymartians.entities.MartianBruteEntity;
 import com.wither.simplymartians.entities.MartianProbeEntity;
 import com.wither.simplymartians.entities.SimpleMartianEntity;
+import com.wither.simplymartians.entities.UFOBossEntity;
 import com.wither.simplymartians.entities.ZapBolt;
 import com.wither.simplymartians.entities.ZombieMartianBruteEntity;
 import com.wither.simplymartians.entities.ZombieMartianEntity;
@@ -36,6 +37,9 @@ public class InitEntity {
 			() -> EntityType.Builder.<ZapBolt>of(ZapBolt::new, MobCategory.MISC).sized(0.5F, 0.5F)
 					.clientTrackingRange(4).updateInterval(10).build(prefix("zap_bolt")));
 	
+	public static final Supplier<EntityType<UFOBossEntity>> MARTIAN_SURVEYOR = ENTITIES_REGISTRY
+			.register("martian_surveyor", () -> EntityType.Builder.of(UFOBossEntity::new, MobCategory.MONSTER)
+					.sized(0.6F, 1.99F).clientTrackingRange(8).eyeHeight(1.55f).build(prefix("martian_surveyor")));
 	
 	public static final Supplier<EntityType<SimpleMartianEntity>> MARTIAN = ENTITIES_REGISTRY
 			.register("martian", () -> EntityType.Builder.of(SimpleMartianEntity::new, MobCategory.MONSTER)
@@ -74,6 +78,7 @@ public class InitEntity {
 		event.put(MARTIAN_PROBE.get(), MartianProbeEntity.createAttributes().build());
 		event.put(ZOMBIE_MARTIAN.get(), ZombieMartianEntity.createAttributes().build());
 		event.put(ZOMBIE_MARTIAN_BRUTE.get(), ZombieMartianBruteEntity.createAttributes().build());
+		event.put(MARTIAN_SURVEYOR.get(), UFOBossEntity.createAttributes().build());
 
 	}
 		@SubscribeEvent

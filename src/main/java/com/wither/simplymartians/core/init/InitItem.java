@@ -8,6 +8,7 @@ import com.wither.simplymartians.items.MartianMaceItem;
 import com.wither.simplymartians.items.MartianPowerCellItem;
 import com.wither.simplymartians.items.MartianSwordItem;
 import com.wither.simplymartians.items.MartianZapperItem;
+import com.wither.simplymartians.items.MeteorSummonerItem;
 import com.wither.simplymartians.items.VibraedgeItem;
 
 import net.minecraft.world.item.ArmorItem;
@@ -55,6 +56,11 @@ public class InitItem {
 	
 	public static final DeferredItem<Item> MARTIAN_SPACE_PLATES = ITEMS.register("martian_space_plates",
 			() -> new Item(itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> METEOR_DEVICE = ITEMS.register("meteor_device",
+			() -> new MeteorSummonerItem(itemBuilder().rarity(Rarity.EPIC).stacksTo(1)));
+	
+	
 	
 	//martian weaponry
 	
@@ -168,6 +174,9 @@ public class InitItem {
 	
 	public static final DeferredItem<Item> MARTIAN_CONSOLE = ITEMS.register("martian_console",
 			() -> new BlockItem(InitBlocks.MARTIAN_CONSOLE.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> HOT_METEOR_ROCK = ITEMS.register("hot_meteor_rock",
+			() -> new BlockItem(InitBlocks.HOT_METEOR_ROCK.get(), itemBuilder().stacksTo(64)));
 	
 	public static final DeferredItem<Item> METEOR_ROCK = ITEMS.register("meteor_rock",
 			() -> new BlockItem(InitBlocks.METEOR_ROCK.get(), itemBuilder().stacksTo(64)));

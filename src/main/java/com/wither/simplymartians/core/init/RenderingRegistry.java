@@ -7,7 +7,9 @@ import com.wither.simplymartians.entities.rendering.MartianBruteRenderer;
 import com.wither.simplymartians.entities.rendering.MartianModel;
 import com.wither.simplymartians.entities.rendering.MartianProbeRenderer;
 import com.wither.simplymartians.entities.rendering.MartianRenderer;
+import com.wither.simplymartians.entities.rendering.MartianSurveyorRenderer;
 import com.wither.simplymartians.entities.rendering.ProbeModel;
+import com.wither.simplymartians.entities.rendering.UFOModel;
 import com.wither.simplymartians.entities.rendering.ZapBoltRenderer;
 import com.wither.simplymartians.entities.rendering.ZombieMartianBruteModel;
 import com.wither.simplymartians.entities.rendering.ZombieMartianBruteRenderer;
@@ -33,6 +35,8 @@ public class RenderingRegistry {
             event.registerEntityRenderer(InitEntity.MARTIAN_BRUTE.get(), MartianBruteRenderer::new);
             event.registerEntityRenderer(InitEntity.MARTIAN_PROBE.get(), MartianProbeRenderer::new);
 
+            event.registerEntityRenderer(InitEntity.MARTIAN_SURVEYOR.get(), MartianSurveyorRenderer::new);
+
             event.registerEntityRenderer(InitEntity.ZOMBIE_MARTIAN.get(), ZombieMartianRenderer::new);
             event.registerEntityRenderer(InitEntity.ZOMBIE_MARTIAN_BRUTE.get(), ZombieMartianBruteRenderer::new);
 
@@ -52,7 +56,8 @@ public class RenderingRegistry {
                 event.registerLayerDefinition(ProbeModel.LAYER_LOCATION, ProbeModel::createBodyLayer);
                 event.registerLayerDefinition(ZombieMartianModel.LAYER_LOCATION, ZombieMartianModel::createBodyLayer);
                 event.registerLayerDefinition(ZombieMartianBruteModel.LAYER_LOCATION, ZombieMartianBruteModel::createBodyLayer);
-    
+                event.registerLayerDefinition(UFOModel.LAYER_LOCATION, UFOModel::createBodyLayer);
+
 
        
     
