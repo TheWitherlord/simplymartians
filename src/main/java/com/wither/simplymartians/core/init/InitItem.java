@@ -2,13 +2,17 @@ package com.wither.simplymartians.core.init;
 
 import com.wither.simplymartians.SimplyMartians;
 import com.wither.simplymartians.items.AuraforceItem;
+import com.wither.simplymartians.items.EngineerGogglesItem;
 import com.wither.simplymartians.items.MartianArmorItem;
 import com.wither.simplymartians.items.MartianDrillItem;
 import com.wither.simplymartians.items.MartianMaceItem;
 import com.wither.simplymartians.items.MartianPowerCellItem;
 import com.wither.simplymartians.items.MartianSwordItem;
 import com.wither.simplymartians.items.MartianZapperItem;
+import com.wither.simplymartians.items.MegaMartianDrillItem;
 import com.wither.simplymartians.items.MeteorSummonerItem;
+import com.wither.simplymartians.items.PlasmaCutterItem;
+import com.wither.simplymartians.items.PlasmaRifleItem;
 import com.wither.simplymartians.items.VibraedgeItem;
 
 import net.minecraft.world.item.ArmorItem;
@@ -22,7 +26,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class InitItem {
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(SimplyMartians.MODID);
 
-
+	public static final DeferredItem<Item> STRANGE_MARTIAN_TECH = ITEMS.register("strange_martian_tech",
+			() -> new Item(itemBuilder().rarity(Rarity.EPIC).stacksTo(64)));
 	
 	public static final DeferredItem<Item> MARTIAN_TECH = ITEMS.register("martian_tech",
 			() -> new Item(itemBuilder().stacksTo(64)));
@@ -31,7 +36,7 @@ public class InitItem {
 			() -> new MartianPowerCellItem(itemBuilder().stacksTo(64)));
 	
 	public static final DeferredItem<Item> MARTIAN_KEY = ITEMS.register("martian_key",
-			() -> new Item(itemBuilder().stacksTo(64)));
+			() -> new Item(itemBuilder().rarity(Rarity.RARE).stacksTo(64)));
 	
 	public static final DeferredItem<Item> UNREFINED_FLUXIUM = ITEMS.register("unrefined_fluxium",
 			() -> new Item(itemBuilder().stacksTo(64)));
@@ -40,19 +45,19 @@ public class InitItem {
 			() -> new Item(itemBuilder().stacksTo(64)));
 	
 	public static final DeferredItem<Item> BLUE_FLUXIUM_CRYSTAL = ITEMS.register("blue_fluxium_crystal",
-			() -> new Item(itemBuilder().stacksTo(64)));
+			() -> new Item(itemBuilder().rarity(Rarity.UNCOMMON).stacksTo(64)));
 	
 	public static final DeferredItem<Item> RED_FLUXIUM_CRYSTAL = ITEMS.register("red_fluxium_crystal",
-			() -> new Item(itemBuilder().stacksTo(64)));
+			() -> new Item(itemBuilder().rarity(Rarity.UNCOMMON).stacksTo(64)));
 	
 	public static final DeferredItem<Item> YELLOW_FLUXIUM_CRYSTAL = ITEMS.register("yellow_fluxium_crystal",
-			() -> new Item(itemBuilder().stacksTo(64)));
+			() -> new Item(itemBuilder().rarity(Rarity.UNCOMMON).stacksTo(64)));
 	
 	public static final DeferredItem<Item> GREEN_FLUXIUM_CRYSTAL = ITEMS.register("green_fluxium_crystal",
-			() -> new Item(itemBuilder().stacksTo(64)));
+			() -> new Item(itemBuilder().rarity(Rarity.UNCOMMON).stacksTo(64)));
 	
 	public static final DeferredItem<Item> PURPLE_FLUXIUM_CRYSTAL = ITEMS.register("purple_fluxium_crystal",
-			() -> new Item(itemBuilder().stacksTo(64)));
+			() -> new Item(itemBuilder().rarity(Rarity.UNCOMMON).stacksTo(64)));
 	
 	public static final DeferredItem<Item> MARTIAN_SPACE_PLATES = ITEMS.register("martian_space_plates",
 			() -> new Item(itemBuilder().stacksTo(64)));
@@ -68,29 +73,33 @@ public class InitItem {
 			() -> new MartianZapperItem(
 					itemBuilder().stacksTo(1).durability(250).rarity(Rarity.RARE).fireResistant()));
 	
+	public static final DeferredItem<Item> PLASMA_RIFLE = ITEMS.register("plasma_rifle",
+			() -> new PlasmaRifleItem(
+					itemBuilder().stacksTo(1).durability(450).rarity(Rarity.EPIC).fireResistant()));
+	
 	public static final DeferredItem<Item> VIBRAEDGE = ITEMS.register("vibraedge",
 			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 7, -2.0F,
-					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
+					itemBuilder().rarity(Rarity.RARE).fireResistant()
 							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 7, -1.7F))));
 	
 	public static final DeferredItem<Item> RED_VIBRAEDGE = ITEMS.register("red_vibraedge",
 			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 7, -2.0F,
-					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
+					itemBuilder().rarity(Rarity.RARE).fireResistant()
 							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 7, -1.7F))));
 	
 	public static final DeferredItem<Item> YELLOW_VIBRAEDGE = ITEMS.register("yellow_vibraedge",
 			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 7, -2.0F,
-					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
+					itemBuilder().rarity(Rarity.RARE).fireResistant()
 							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 7, -1.7F))));
 	
 	public static final DeferredItem<Item> GREEN_VIBRAEDGE = ITEMS.register("green_vibraedge",
 			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 7, -2.0F,
-					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
+					itemBuilder().rarity(Rarity.RARE).fireResistant()
 							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 7, -1.7F))));
 	
 	public static final DeferredItem<Item> PURPLE_VIBRAEDGE = ITEMS.register("purple_vibraedge",
 			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 7, -2.0F,
-					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
+					itemBuilder().rarity(Rarity.RARE).fireResistant()
 							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 7, -1.7F))));
 	
 	public static final DeferredItem<Item> FLUXIUM_SWORD = ITEMS.register("fluxium_sword",
@@ -101,6 +110,10 @@ public class InitItem {
 			() -> new AuraforceItem(ModToolMaterials.MARTIAN, itemBuilder().rarity(Rarity.EPIC).fireResistant()
 							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 9, -2.6f))));
 	
+	public static final DeferredItem<Item> PLASMACUTTER = ITEMS.register("plasmacutter",
+			() -> new PlasmaCutterItem(ModToolMaterials.MARTIAN, itemBuilder().rarity(Rarity.EPIC).fireResistant()
+							.attributes(PlasmaCutterItem.createAttributes(ModToolMaterials.MARTIAN, 10, -2.6f))));
+	
 	
 	public static final DeferredItem<Item> TECHNOMACE = ITEMS.register("technomace",
 			() -> new MartianMaceItem(ModToolMaterials.MARTIAN, itemBuilder().rarity(Rarity.EPIC).fireResistant()
@@ -108,6 +121,8 @@ public class InitItem {
 	
 	
 	//martian tools
+	
+	
 	
 	public static final DeferredItem<Item> FLUXIUM_DRILL = ITEMS.register("fluxium_drill",
 			() -> new MartianDrillItem(3, -1.2F, ModToolMaterials.MARTIAN,
@@ -134,6 +149,12 @@ public class InitItem {
 					itemBuilder().rarity(Rarity.UNCOMMON).fireResistant()
 							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 3, -1.2F))));
 	
+	
+	public static final DeferredItem<Item> MEGA_DRILL = ITEMS.register("mega_drill",
+			() -> new MegaMartianDrillItem(3, -1.2F, ModToolMaterials.MARTIAN,
+					itemBuilder().rarity(Rarity.EPIC).fireResistant()
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 3, -1.2F))));
+	
 	//armor
 	public static final DeferredItem<Item> MARTIAN_HELMET = ITEMS.register("martian_helmet",
 			() -> new MartianArmorItem(ModArmorMaterials.MARTIAN, ArmorItem.Type.HELMET,
@@ -147,6 +168,10 @@ public class InitItem {
 	public static final DeferredItem<Item> MARTIAN_BOOTS = ITEMS.register("martian_boots",
 			() -> new MartianArmorItem(ModArmorMaterials.MARTIAN, ArmorItem.Type.BOOTS,
 					itemBuilder().durability(481).rarity(Rarity.RARE).stacksTo(1)));
+	
+	public static final DeferredItem<Item> ENGINEER_GOGGLES = ITEMS.register("engineer_goggles",
+			() -> new EngineerGogglesItem(ModArmorMaterials.ENGINEER, ArmorItem.Type.HELMET,
+					itemBuilder().durability(328).rarity(Rarity.EPIC).stacksTo(1)));
 	
 	
 	//blocks
@@ -313,6 +338,24 @@ public class InitItem {
 	
 	public static final DeferredItem<Item> MARTIAN_BRUTE_SPAWN_EGG = ITEMS.register("martian_brute_spawn_egg",
 			() -> new DeferredSpawnEggItem(InitEntity.MARTIAN_BRUTE, 0XCCEBFF, 0XBAFF68, new Item.Properties()));
+	
+	public static final DeferredItem<Item> ZOMBIE_MARTIAN_BRUTE_SPAWN_EGG = ITEMS.register("zombie_martian_brute_spawn_egg",
+			() -> new DeferredSpawnEggItem(InitEntity.ZOMBIE_MARTIAN_BRUTE, 0XCCEBFF, 0XBAFF68, new Item.Properties()));
+	
+	public static final DeferredItem<Item> ZOMBIE_MARTIAN_SPAWN_EGG = ITEMS.register("zombie_martian_spawn_egg",
+			() -> new DeferredSpawnEggItem(InitEntity.ZOMBIE_MARTIAN, 0XCCEBFF, 0XBAFF68, new Item.Properties()));
+	
+	public static final DeferredItem<Item> TESLA_BOT_SPAWN_EGG = ITEMS.register("tesla_bot_spawn_egg",
+			() -> new DeferredSpawnEggItem(InitEntity.TESLA_BOT, 0XCCEBFF, 0XBAFF68, new Item.Properties()));
+	
+	public static final DeferredItem<Item> PROBE_SPAWN_EGG = ITEMS.register("probe_spawn_egg",
+			() -> new DeferredSpawnEggItem(InitEntity.MARTIAN_PROBE, 0XCCEBFF, 0XBAFF68, new Item.Properties()));
+	
+	public static final DeferredItem<Item> MARTIAN_ENGINEER_SPAWN_EGG = ITEMS.register("martian_engineer_spawn_egg",
+			() -> new DeferredSpawnEggItem(InitEntity.MARTIAN_ENGINEER, 0XCCEBFF, 0XBAFF68, new Item.Properties()));
+	
+	public static final DeferredItem<Item> MARTIAN_SURVEYOR_SPAWN_EGG = ITEMS.register("martian_surveyor_spawn_egg",
+			() -> new DeferredSpawnEggItem(InitEntity.MARTIAN_SURVEYOR, 0XCCEBFF, 0XBAFF68, new Item.Properties()));
 
 	private static Item.Properties itemBuilder() {
 		return new Item.Properties();

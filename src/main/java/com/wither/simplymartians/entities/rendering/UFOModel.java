@@ -55,14 +55,12 @@ public class UFOModel<T extends Entity> extends EntityModel<T> {
 	@Override
 	public void setupAnim(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		 this.ufo_base.yRot = netHeadYaw * ((float)Math.PI / 180F);
-	      this.ufo_base.xRot = headPitch * ((float)Math.PI / 180F);
+
+	      //this.ufo_base.xRot = headPitch * ((float)Math.PI / 180F);
 	}
 	
 
-	public void setupSpinAnim(float mouthAnimation, float yRot, float xRot) {
-        this.ufo_base.yRot = yRot * (float) (Math.PI / 180.0);
-        this.ufo_base.xRot = xRot * (float) (Math.PI / 180.0);
-    }
+	
 
 	@Override
 	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, int color) {

@@ -17,6 +17,14 @@ public class ModParticleTypes {
 	public static final Supplier<SimpleParticleType>OVERSHOCK = PARTICLE_TYPES.register("overshock",
 
 			() -> new SimpleParticleType(false));
+	
+	public static final Supplier<SimpleParticleType>PLASMASHOCK = PARTICLE_TYPES.register("plasmashock",
+
+			() -> new SimpleParticleType(false));
+	
+	public static final Supplier<SimpleParticleType>ENERGY_TRAIL = PARTICLE_TYPES.register("energy_trail",
+
+			() -> new SimpleParticleType(false));
 
 	
 	

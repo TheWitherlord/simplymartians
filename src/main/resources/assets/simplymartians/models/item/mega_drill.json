@@ -1,0 +1,99 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "simplymartians:item/mega_drill"
+    },
+    "display": {
+		"thirdperson_righthand": {
+			"rotation": [
+				-80,
+				260,
+				-40
+			],
+			"translation": [
+				-2,
+				4.0,
+				1.5
+			],
+			"scale": [
+				1.2,
+				1.2,
+				0.85
+			]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [
+				-80,
+				-280,
+				40
+			],
+			"translation": [
+				-2,
+				6.0,
+				2.5
+			],
+			"scale": [
+				1.2,
+				1.2,
+				0.85
+			]
+		},
+		"firstperson_righthand": {
+			"rotation": [
+				0,
+				-90,
+				25
+			],
+			"translation": [
+				1.13,
+				6.0,
+				1.10
+			],
+			"scale": [
+				1.2,
+				1.2,
+				0.83
+			]
+		},
+		"firstperson_lefthand": {
+			"rotation": [
+				0,
+				90,
+				-25
+			],
+			"translation": [
+				1.13,
+				6.0,
+				1.13
+			],
+			"scale": [
+				1.2,
+				1.2,
+				0.83
+			]
+		}
+
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "drilling": 1
+            },
+            "model": "simplymartians:item/mega_drill_0"
+        },
+        {
+            "predicate": {
+                "drilling": 1,
+                "activate": 0.65
+            },
+            "model": "simplymartians:item/mega_drill_1"
+        },
+        {
+            "predicate": {
+                "drilling": 1,
+                "activate": 0.9
+            },
+            "model": "simplymartians:item/mega_drill_2"
+        }
+    ]
+}

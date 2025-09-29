@@ -16,11 +16,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "simplymartians:fluxium_sword"
+          "name": "simplymartians:refined_fluxium"
         },
         {
           "type": "minecraft:item",
-          "name": "simplymartians:vibraedge",
+          "name": "simplymartians:meteor_device",
           "functions": []
         },
         {

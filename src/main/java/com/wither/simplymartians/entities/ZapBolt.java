@@ -1,12 +1,14 @@
 package com.wither.simplymartians.entities;
 
 import com.google.common.base.MoreObjects;
+import com.wither.simplymartians.core.init.InitDamageSources;
 import com.wither.simplymartians.core.init.InitEntity;
 import com.wither.simplymartians.core.init.ModMobEffects;
 
 import net.minecraft.core.Vec3i;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -24,7 +26,7 @@ public class ZapBolt extends ModArrowLikeProjectile {
 
 	public ZapBolt(EntityType<? extends ZapBolt> p_36892_, Level p_36893_) {
 		super(p_36892_, p_36893_);
-		
+
 
 	}
 
@@ -38,42 +40,56 @@ public class ZapBolt extends ModArrowLikeProjectile {
 		super(InitEntity.ZAP_BOLT.get(), worldIn, x, y, z);
 	}
 
-	@Override
-	protected void onHitEntity(EntityHitResult pResult) {
-		super.onHitEntity(pResult);
-		if (!this.level().isClientSide) {
-			
-			LivingEntity livingentity = this.getOwner() instanceof LivingEntity livingentity1 ? livingentity1 : null;
-			Entity entity = pResult.getEntity();
-			if (livingentity != null) {
-				livingentity.setLastHurtMob(entity);
-				 ((ServerLevel)this.level()).sendParticles(ParticleTypes.LARGE_SMOKE, this.getX(), this.getY(), this.getZ(), 2, 0.2D, 0.2D, 0.2D, 0.0D);
-		        // this.level().explode(this, this.getX(), this.getY(), this.getZ(), 1.2f, Level.ExplosionInteraction.NONE);
-				 ((LivingEntity) entity).addEffect(new MobEffectInstance(MobEffects.GLOWING, 100), MoreObjects.firstNonNull(entity, this));
-				 ((LivingEntity) entity).addEffect(new MobEffectInstance(ModMobEffects.OVERSHOCK, 45), MoreObjects.firstNonNull(entity, this));
+	
+	
+	
+	 @Override
+	    protected void onHitEntity(EntityHitResult result) {
+	        super.onHitEntity(result);
+	        if (this.level() instanceof ServerLevel serverlevel) {
+	            Entity entity = result.getEntity();
+	            boolean flag;
+	            if (this.getOwner() instanceof LivingEntity livingentity) {
+	                DamageSource damagesource = InitDamageSources.overshock(livingentity);
+	                flag = entity.hurt(damagesource, 4.0F);
+	                if (flag) {
+	                    if (entity.isAlive()) {
+	                        EnchantmentHelper.doPostAttackEffects(serverlevel, entity, damagesource);
+	                   
+	                }
+	            
+	            }
 
-				 this.discard();
-			}
+	          
+	                if (flag && entity instanceof LivingEntity livingentity1) {
+	 	               
 
-			DamageSource damagesource = this.damageSources().mobProjectile(this, livingentity);
-			if (entity.hurt(damagesource, 4.0F) && entity instanceof LivingEntity livingentity2) {
-				EnchantmentHelper.doPostAttackEffects((ServerLevel) this.level(), livingentity2, damagesource);
-				
-				
-
-			}
-
-		}
-	}
-
+	                    livingentity1.addEffect(new MobEffectInstance(ModMobEffects.OVERSHOCK, 30), this.getEffectSource());
+	                    livingentity1.addEffect(new MobEffectInstance(MobEffects.GLOWING, 100), this.getEffectSource());
+                           this.discard();
+	                }
+	            }
+	            }
+	    }
+	
+	
+	
 	
 
 	@Override
 	protected double getDefaultGravity() {
-		return 0.001F;
+		return 0F;
 	}
 	
-	
+	@Override
+	public void tick() {
+		super.tick();
+		this.life++;
+        if (this.life >= 55) {
+            this.discard();
+                  }
+		
+}
 
 	    @Override
 	    protected void onHitBlock(BlockHitResult pResult) {
@@ -88,15 +104,9 @@ public class ZapBolt extends ModArrowLikeProjectile {
 	            this.discard();
 	        }
 	    }
-	    @Override
-		public void tick() {
-			super.tick();
-			this.life++;
-	        if (this.life >= 55) {
-	            this.discard();
-	                }
+	  
 			
-}
+
 
 	    @Override
 		public void handleEntityEvent(byte id) {

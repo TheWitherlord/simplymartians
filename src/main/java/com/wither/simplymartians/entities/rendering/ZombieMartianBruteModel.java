@@ -86,8 +86,24 @@ public class ZombieMartianBruteModel<T extends ZombieMartianBruteEntity> extends
 	      this.right_leg.yRot = 0.0F;
 	      this.left_leg.yRot = 0.0F;
 	      
+	      
 	        AnimationUtils.animateZombieArms(this.left_arm, this.right_arm, this.isAggressive(pEntity), this.attackTime, pAgeInTicks);
 
+	      if (this.riding) {
+	            this.right_arm.xRot = (float) (-Math.PI / 5);
+	            this.right_arm.yRot = 0.0F;
+	            this.right_arm.zRot = 0.0F;
+	            this.left_arm.xRot = (float) (-Math.PI / 5);
+	            this.left_arm.yRot = 0.0F;
+	            this.left_arm.zRot = 0.0F;
+	            this.right_leg.xRot = -1.4137167F;
+	            this.right_leg.yRot = (float) (Math.PI / 10);
+	            this.right_leg.zRot = 0.07853982F;
+	            this.left_leg.xRot = -1.4137167F;
+	            this.left_leg.yRot = (float) (-Math.PI / 10);
+	            this.left_leg.zRot = -0.07853982F;
+	      
+	      }
 	}
       
 	

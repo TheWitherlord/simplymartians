@@ -1,17 +1,12 @@
 package com.wither.simplymartians.entities.rendering;
 
 import com.wither.simplymartians.SimplyMartians;
-import com.wither.simplymartians.entities.MartianProbeEntity;
 import com.wither.simplymartians.entities.UFOBossEntity;
 
-import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.animal.allay.Allay;
-import net.minecraft.world.entity.monster.Blaze;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
@@ -28,6 +23,8 @@ public class MartianSurveyorRenderer extends MobRenderer<UFOBossEntity, UFOModel
         return 15;
     }
   
+    
+    
 
     /**
      * Returns the location of an entity's texture.

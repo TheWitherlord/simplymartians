@@ -85,13 +85,27 @@ public class MartianBruteModel<T extends MartianBruteEntity> extends EntityModel
 	      this.right_leg.yRot = 0.0F;
 	      this.left_leg.yRot = 0.0F;
 	      
+	      if (this.riding) {
+	            this.right_arm.xRot = (float) (-Math.PI / 5);
+	            this.right_arm.yRot = 0.0F;
+	            this.right_arm.zRot = 0.0F;
+	            this.left_arm.xRot = (float) (-Math.PI / 5);
+	            this.left_arm.yRot = 0.0F;
+	            this.left_arm.zRot = 0.0F;
+	            this.right_leg.xRot = -1.4137167F;
+	            this.right_leg.yRot = (float) (Math.PI / 10);
+	            this.right_leg.zRot = 0.07853982F;
+	            this.left_leg.xRot = -1.4137167F;
+	            this.left_leg.yRot = (float) (-Math.PI / 10);
+	            this.left_leg.zRot = -0.07853982F;
+	      
 	      if (pEntity.getItemInHand(InteractionHand.MAIN_HAND).getItem() == InitItem.FLUXIUM_SWORD.get()) {
                AnimationUtils.swingWeaponDown(this.right_arm, this.left_arm, pEntity, this.attackTime, pAgeInTicks);
            } else {
  		      if (pEntity.getItemInHand(InteractionHand.MAIN_HAND).getItem() == InitItem.MARTIAN_ZAPPER.get()) {
                AnimationUtils.animateCrossbowHold(this.right_arm, this.left_arm, this.head, !pEntity.isLeftHanded());
            }
-           }
+           }}
      
        }
       

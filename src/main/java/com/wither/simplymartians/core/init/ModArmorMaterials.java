@@ -32,4 +32,15 @@ public class ModArmorMaterials {
 		map.put(MartianArmorItem.Type.HELMET, 2);
 		map.put(MartianArmorItem.Type.BODY, 11);
 	}), 11, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(InitItem.MARTIAN_TECH.get()), List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(SimplyMartians.MODID,"martian"))), 1.5F, 0.0F));
+	
+	
+
+	
+	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> ENGINEER = ARMOR_MATERIALS.register("engineer", () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+		map.put(MartianArmorItem.Type.BOOTS, 3);
+		map.put(MartianArmorItem.Type.LEGGINGS, 6);
+		map.put(MartianArmorItem.Type.CHESTPLATE, 8);
+		map.put(MartianArmorItem.Type.HELMET, 3);
+		map.put(MartianArmorItem.Type.BODY, 11);
+	}), 11, SoundEvents.ARMOR_EQUIP_IRON, () -> Ingredient.of(InitItem.STRANGE_MARTIAN_TECH.get()), List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(SimplyMartians.MODID,"engineer"))), 1.5F, 0.0F));
 }

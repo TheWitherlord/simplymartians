@@ -7,16 +7,16 @@ import javax.annotation.Nullable;
 import com.mojang.serialization.MapCodec;
 import com.wither.simplymartians.core.init.InitBlocks;
 import com.wither.simplymartians.core.init.InitEntity;
-import com.wither.simplymartians.entities.SimpleMartianEntity;
-
+import com.wither.simplymartians.core.init.InitItem;
+import com.wither.simplymartians.entities.MartianEngineerEntity;
+import com.wither.simplymartians.entities.UFOBossEntity;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.animal.SnowGolem;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -62,18 +62,26 @@ public class ConsoleBlock extends HorizontalDirectionalBlock {
       
            BlockPattern.BlockPatternMatch blockpattern$blockpatternmatch1 = this.getOrCreateIronGolemFull().find(level, pos);
            if (blockpattern$blockpatternmatch1 != null) {
-        	   SimpleMartianEntity irongolem = InitEntity.MARTIAN.get().create(level);
-               if (irongolem != null) {
-                   spawnGolemInWorld(level, blockpattern$blockpatternmatch1, irongolem, blockpattern$blockpatternmatch1.getBlock(1, 2, 0).getPos());
+        	   UFOBossEntity ufo = new UFOBossEntity(InitEntity.MARTIAN_SURVEYOR.get(), level);
+        	   MartianEngineerEntity martian = new MartianEngineerEntity(InitEntity.MARTIAN_ENGINEER.get(), level);
+
+               if (ufo != null) {
+                   spawnGolemInWorld(level, blockpattern$blockpatternmatch1, ufo, martian, blockpattern$blockpatternmatch1.getBlock(1, 2, 0).getPos());
                }
            }
        }
    
 
-   private static void spawnGolemInWorld(Level level, BlockPattern.BlockPatternMatch patternMatch, Entity golem, BlockPos pos) {
+   private static void spawnGolemInWorld(Level level, BlockPattern.BlockPatternMatch patternMatch, Entity golem, MartianEngineerEntity martian, BlockPos pos) {
        clearPatternBlocks(level, patternMatch);
        golem.moveTo((double)pos.getX() + 0.5, (double)pos.getY() + 0.05, (double)pos.getZ() + 0.5, 0.0F, 0.0F);
        level.addFreshEntity(golem);
+       level.addFreshEntity(martian);
+
+       martian.startRiding(golem);
+       martian.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(InitItem.PLASMACUTTER.get()));
+       martian.setDropChance(EquipmentSlot.MAINHAND, 0.0F);       
+       
 
        for (ServerPlayer serverplayer : level.getEntitiesOfClass(ServerPlayer.class, golem.getBoundingBox().inflate(5.0))) {
            CriteriaTriggers.SUMMONED_ENTITY.trigger(serverplayer, golem);

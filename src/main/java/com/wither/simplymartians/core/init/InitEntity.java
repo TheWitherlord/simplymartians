@@ -3,15 +3,20 @@ package com.wither.simplymartians.core.init;
 import java.util.function.Supplier;
 
 import com.wither.simplymartians.SimplyMartians;
+import com.wither.simplymartians.entities.BigPlasmaBall;
 import com.wither.simplymartians.entities.FluxWave;
+import com.wither.simplymartians.entities.MartianBolt;
 import com.wither.simplymartians.entities.MartianBruteEntity;
+import com.wither.simplymartians.entities.MartianEngineerEntity;
+import com.wither.simplymartians.entities.MartianGrenade;
 import com.wither.simplymartians.entities.MartianProbeEntity;
+import com.wither.simplymartians.entities.PlasmaBall;
 import com.wither.simplymartians.entities.SimpleMartianEntity;
+import com.wither.simplymartians.entities.TeslaBotEntity;
 import com.wither.simplymartians.entities.UFOBossEntity;
 import com.wither.simplymartians.entities.ZapBolt;
 import com.wither.simplymartians.entities.ZombieMartianBruteEntity;
 import com.wither.simplymartians.entities.ZombieMartianEntity;
-
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -31,15 +36,43 @@ public class InitEntity {
 			SimplyMartians.MODID);
 
 	
-
+	public static final Supplier<EntityType<MartianBolt>> MARTIAN_BOLT = ENTITIES_REGISTRY.register("martian_bolt",
+			() -> EntityType.Builder.<MartianBolt>of(MartianBolt::new, MobCategory.MISC).sized(0.5F, 0.5F)
+					.clientTrackingRange(4).updateInterval(10).build(prefix("zap_bolt")));
 
 	public static final Supplier<EntityType<ZapBolt>> ZAP_BOLT = ENTITIES_REGISTRY.register("zap_bolt",
 			() -> EntityType.Builder.<ZapBolt>of(ZapBolt::new, MobCategory.MISC).sized(0.5F, 0.5F)
 					.clientTrackingRange(4).updateInterval(10).build(prefix("zap_bolt")));
 	
+	
+	public static final Supplier<EntityType<MartianGrenade>> MARTIAN_GRENADE = ENTITIES_REGISTRY
+			.register("martian_grenade",
+					() -> EntityType.Builder.<MartianGrenade>of(MartianGrenade::new, MobCategory.MISC)
+							.sized(0.3125F, 0.3125F).clientTrackingRange(4).updateInterval(10)
+							.build(prefix("martian_grenade")));
+	
+	public static final Supplier<EntityType<PlasmaBall>> PLASMA_BALL = ENTITIES_REGISTRY
+			.register("plasma_ball",
+					() -> EntityType.Builder.<PlasmaBall>of(PlasmaBall::new, MobCategory.MISC)
+							.sized(0.3125F, 0.3125F).clientTrackingRange(4).updateInterval(10)
+							.build(prefix("plasma_ball")));
+	
+	public static final Supplier<EntityType<BigPlasmaBall>> BIG_PLASMA_BALL = ENTITIES_REGISTRY
+			.register("big_plasma_ball",
+					() -> EntityType.Builder.<BigPlasmaBall>of(BigPlasmaBall::new, MobCategory.MISC)
+							.sized(0.3125F, 0.3125F).clientTrackingRange(4).updateInterval(10)
+							.build(prefix("plasma_ball")));
+	
+	
+	
 	public static final Supplier<EntityType<UFOBossEntity>> MARTIAN_SURVEYOR = ENTITIES_REGISTRY
 			.register("martian_surveyor", () -> EntityType.Builder.of(UFOBossEntity::new, MobCategory.MONSTER)
-					.sized(0.6F, 1.99F).clientTrackingRange(8).eyeHeight(1.55f).build(prefix("martian_surveyor")));
+					.sized(3.2F, 3.99F).clientTrackingRange(8).eyeHeight(1.75f).build(prefix("martian_surveyor")));
+	
+	
+	public static final Supplier<EntityType<MartianEngineerEntity>> MARTIAN_ENGINEER = ENTITIES_REGISTRY
+			.register("martian_engineer", () -> EntityType.Builder.of(MartianEngineerEntity::new, MobCategory.MONSTER)
+					.sized(0.6F, 1.99F).clientTrackingRange(8).eyeHeight(1.55f).build(prefix("martian_engineer")));
 	
 	public static final Supplier<EntityType<SimpleMartianEntity>> MARTIAN = ENTITIES_REGISTRY
 			.register("martian", () -> EntityType.Builder.of(SimpleMartianEntity::new, MobCategory.MONSTER)
@@ -47,7 +80,7 @@ public class InitEntity {
 	
 	public static final Supplier<EntityType<MartianBruteEntity>> MARTIAN_BRUTE = ENTITIES_REGISTRY
 			.register("martian_brute", () -> EntityType.Builder.of(MartianBruteEntity::new, MobCategory.MONSTER)
-					.sized(0.6F, 2F).clientTrackingRange(8).eyeHeight(1.6f).build(prefix("martian_brute")));
+					.sized(0.6F, 2F).clientTrackingRange(8).eyeHeight(1.8f).build(prefix("martian_brute")));
 	
 	public static final Supplier<EntityType<ZombieMartianEntity>> ZOMBIE_MARTIAN = ENTITIES_REGISTRY
 			.register("zombie_martian", () -> EntityType.Builder.of(ZombieMartianEntity::new, MobCategory.MONSTER)
@@ -55,7 +88,11 @@ public class InitEntity {
 	
 	public static final Supplier<EntityType<ZombieMartianBruteEntity>> ZOMBIE_MARTIAN_BRUTE = ENTITIES_REGISTRY
 			.register("zombie_martian_brute", () -> EntityType.Builder.of(ZombieMartianBruteEntity::new, MobCategory.MONSTER)
-					.sized(0.6F, 2F).clientTrackingRange(8).eyeHeight(1.6f).build(prefix("zombie_martian_brute")));
+					.sized(0.6F, 2F).clientTrackingRange(8).eyeHeight(1.8f).build(prefix("zombie_martian_brute")));
+	
+	public static final Supplier<EntityType<TeslaBotEntity>> TESLA_BOT = ENTITIES_REGISTRY
+			.register("tesla_bot", () -> EntityType.Builder.of(TeslaBotEntity::new, MobCategory.MONSTER)
+					.sized(0.4F, 0.9F).clientTrackingRange(8).eyeHeight(0.75f).build(prefix("tesla_bot")));
 	
 	public static final Supplier<EntityType<FluxWave>> FLUX_WAVE = ENTITIES_REGISTRY.register("flux_wave",
 			() -> EntityType.Builder.<FluxWave>of(FluxWave::new, MobCategory.MISC).sized(2F, 1F)
@@ -79,6 +116,9 @@ public class InitEntity {
 		event.put(ZOMBIE_MARTIAN.get(), ZombieMartianEntity.createAttributes().build());
 		event.put(ZOMBIE_MARTIAN_BRUTE.get(), ZombieMartianBruteEntity.createAttributes().build());
 		event.put(MARTIAN_SURVEYOR.get(), UFOBossEntity.createAttributes().build());
+		event.put(MARTIAN_ENGINEER.get(), MartianEngineerEntity.createAttributes().build());
+		event.put(TESLA_BOT.get(), TeslaBotEntity.createAttributes().build());
+
 
 	}
 		@SubscribeEvent

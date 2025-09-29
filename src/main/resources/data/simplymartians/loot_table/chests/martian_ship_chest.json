@@ -65,12 +65,23 @@
           ],
           "name": "simplymartians:martian_flooring",
           "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplymartians:unrefined_fluxium",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            }
+          ]
         }
       ],
       "rolls": {
         "type": "minecraft:uniform",
-        "max": 10,
-        "min": 4
+        "max": 3,
+        "min": 1
       }
     }
   ],

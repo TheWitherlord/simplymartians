@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " c ",
+        "gBi",
+        "i  "
+    ],
+    "key": {
+        "g": {
+            "item": "simplymartians:martian_space_plates"
+        },
+        "c": {
+            "item": "simplymartians:strange_martian_tech"
+        },
+        "B": {
+            "item": "simplymartians:martian_zapper"
+        },
+        "i": {
+            "item": "simplymartians:refined_fluxium"
+        }
+    },
+    "result": {
+        "id": "simplymartians:plasma_rifle",
+        "count": 1
+    }
+}

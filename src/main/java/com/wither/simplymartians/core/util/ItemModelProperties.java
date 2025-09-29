@@ -174,4 +174,23 @@ public class ItemModelProperties {
 						&& livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
 
 	}
+	
+	@SubscribeEvent
+	public static void setModelPropertiesMegaDrill(FMLClientSetupEvent event) {
+		ItemProperties.register(InitItem.MEGA_DRILL.get(), ResourceLocation.parse("activate"),
+				(itemStack, world, livingEntity, seed) -> {
+					if (livingEntity == null) {
+						return 0.0F;
+					} else {
+						return livingEntity.getUseItem() != itemStack ? 0.0F
+								: (float) (itemStack.getUseDuration(livingEntity)
+										- livingEntity.getUseItemRemainingTicks()) / 10.0F;
+					}
+				});
+
+		ItemProperties.register(InitItem.MEGA_DRILL.get(), ResourceLocation.parse("drilling"),
+				(itemStack, world, livingEntity, seed) -> livingEntity != null && livingEntity.isUsingItem()
+						&& livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
+
+	}
 }

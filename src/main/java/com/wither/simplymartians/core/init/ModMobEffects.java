@@ -2,6 +2,7 @@ package com.wither.simplymartians.core.init;
 
 import com.wither.simplymartians.SimplyMartians;
 import com.wither.simplymartians.entities.OvershockEffect;
+import com.wither.simplymartians.entities.PlasmaEffect;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -26,14 +27,16 @@ public class ModMobEffects {
 
 	
 	
-	
+	public static final DeferredHolder<MobEffect, MobEffect> PLASMA = MOB_EFFECT_DEFERRED_REGISTER.register(
+			"plasmashock",
+			() -> new PlasmaEffect(MobEffectCategory.HARMFUL, 0xFEA2F3).addAttributeModifier(
+	                Attributes.ARMOR, ResourceLocation.withDefaultNamespace("effect.plasmashock"), -0.25, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
+		            ));
 
 	
 	public static final DeferredHolder<MobEffect, MobEffect> OVERSHOCK = MOB_EFFECT_DEFERRED_REGISTER.register(
 			"overshock",
-			() -> new OvershockEffect(MobEffectCategory.HARMFUL, 0xFFAA3D)
-					
-					.withSoundOnAdded(SoundEvents.FIRECHARGE_USE));
+			() -> new OvershockEffect(MobEffectCategory.HARMFUL, 0xFFAA3D));
 	
 	
 	

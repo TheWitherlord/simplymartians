@@ -81,6 +81,7 @@ public class MartianArmorItem extends ArmorItem {
 
 			livingEntity.removeEffect(ModMobEffects.OVERSHOCK);
 
+
 		}
 
 	}

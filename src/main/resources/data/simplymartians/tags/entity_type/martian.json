@@ -2,7 +2,12 @@
   "values": [   
   "simplymartians:martian",
   "simplymartians:martian_brute",
-  "simplymartians:martian_probe"
+  "simplymartians:martian_probe",
+  "simplymartians:martian_surveyor",
+  "simplymartians:martian_engineer",
+  "simplymartians:tesla_bot"
+
+
 
 
 

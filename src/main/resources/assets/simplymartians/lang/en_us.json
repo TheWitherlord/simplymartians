@@ -1,28 +1,42 @@
 {
   "itemGroup.simplymartians": "Simply Martians",
   
-  //items
-  "item.simplymartians.martian_tech": "Martian Tech",
-  "item.simplymartians.martian_space_plates": "Martian Space Plates",
-   "item.simplymartians.meteor_device": "Meteor Device",
+  //spawn eggs
+ 
   "item.simplymartians.martian_spawn_egg": "Spawn Martian",
   "item.simplymartians.martian_brute_spawn_egg": "Spawn Martian Brute",
+    "item.simplymartians.zombie_martian_brute_spawn_egg": "Spawn Zombie Martian Brute",
+      "item.simplymartians.zombie_martian_spawn_egg": "Spawn Zombie Martian",
+        "item.simplymartians.tesla_bot_spawn_egg": "Spawn Tesla Bot",
+       "item.simplymartians.probe_spawn_egg": "Spawn Martian Probe",
+      "item.simplymartians.martian_engineer_spawn_egg": "Spawn Martian Engineer",
+       "item.simplymartians.martian_surveyor_spawn_egg": "Spawn Martian Surveyor",
+       
+         //items 
+   "item.simplymartians.martian_tech": "Martian Tech",
+      "item.simplymartians.strange_martian_tech": "Strange Martian Tech",
+  "item.simplymartians.martian_space_plates": "Martian Space Plates",
+   "item.simplymartians.meteor_device": "Meteor Device",
     "item.simplymartians.martian_power_cell": "Martian Power Cell",
     "item.simplymartians.martian_key": "Martian Key",
     "item.simplymartians.martian_zapper": "Martian Zapper",
+     "item.simplymartians.plasma_rifle": "Plasma Rifle",
     "item.simplymartians.vibraedge": "Blue Vibra-Edge",
      "item.simplymartians.red_vibraedge": "Red Vibra-Edge",
      "item.simplymartians.yellow_vibraedge": "Yellow Vibra-Edge",
       "item.simplymartians.green_vibraedge": "Green Vibra-Edge",
       "item.simplymartians.purple_vibraedge": "Purple Vibra-Edge",
     "item.simplymartians.fluxium_sword": "Fluxium Sword",
-        "item.simplymartians.auraforce": "Auraforce",
+     "item.simplymartians.auraforce": "Auraforce",
+     "item.simplymartians.plasmacutter": "Plasma-Cutter",
         "item.simplymartians.technomace": "Technomace",
          "item.simplymartians.fluxium_drill": "Blue Fluxium Drill",
      "item.simplymartians.red_fluxium_drill": "Red Fluxium Drill",
      "item.simplymartians.yellow_fluxium_drill": "Yellow Fluxium Drill",
       "item.simplymartians.green_fluxium_drill": "Green Fluxium Drill",
       "item.simplymartians.purple_fluxium_drill": "Purple Fluxium Drill",
+       "item.simplymartians.mega_drill": "Mega Fluxium Drill",
+        "item.simplymartians.engineer_goggles": "Martian Engineer's Goggles",
         "item.simplymartians.martian_helmet": "Martian Space Helmet",
         "item.simplymartians.martian_chestplate": "Martian Space Uniform",
         "item.simplymartians.martian_leggings": "Martian Space Uniform Pants",
@@ -91,18 +105,35 @@
 "entity.simplymartians.martian":"Martian",
 "entity.simplymartians.martian_brute":"Martian Brute",
 "entity.simplymartians.martian_probe":"Martian Probe",
+"entity.simplymartians.zombie_martian":"Zombie Martian",
+"entity.simplymartians.zombie_martian_brute":"Zombie Martian Brute",
+"entity.simplymartians.tesla_bot":"Tesla Bot",
+"entity.simplymartians.martian_engineer":"Martian Engineer",
+"entity.simplymartians.martian_surveyor":"Martian Surveyor",
+
 
 "entity.simplymartians.martian_brute":"Zap Bolt",
 "entity.simplymartians.flux_wave":"Flux Wave",
+"entity.simplymartians.plasma_ball":"Plasma Ball",
+"entity.simplymartians.martian_grenade":"Martian Grenade",
+"entity.simplymartians.martian_bolt":"Martian Grenade",
 
 //effects
 "effect.simplymartians.overshock":"Overshock",
   "effect.simplymartians.overshock.description": "You are rapidly losing life. ",
+  "effect.simplymartians.plasmashock":"Plasmashock",
+  "effect.simplymartians.plasmashock.description": "You are losing life and have lower defense. ",
 
 //tooltips
 "tooltip.simplymartians.zapper.tooltip": "Ammo:",
 "tooltip.simplymartians.zapper.ammo": "Martian Power Cells",
-"tooltip.simplymartians.meteor.tooltip": "Summons a Meteor! Use with CAUTION!"
+"tooltip.simplymartians.plasma_rifle.tooltip": "Ammo:",
+"tooltip.simplymartians.plasma_rifle.ammo": "Martian Power Cells",
+"tooltip.simplymartians.meteor.tooltip": "Summons a Meteor! Use with CAUTION!",
+
+//damage
+"death.attack.martian_shock": "%1$s was shocked to death",
+"death.attack.overshock": "%1$s was overloaded with energy"
 
 
  }

@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " #W",
+        "DSG",
+        "iR "
+    ],
+    "key": {
+        "#": {
+            "item": "simplymartians:fluxium_drill"
+        },
+        "W": {
+            "item": "simplymartians:red_fluxium_drill"
+        },
+        "D": {
+            "item": "simplymartians:yellow_fluxium_drill"
+        },
+        "S": {
+            "item": "simplymartians:strange_martian_tech"
+        },
+        "G": {
+            "item": "simplymartians:green_fluxium_drill"
+        },
+        "i": {
+            "item": "simplymartians:refined_fluxium"
+        },
+        "R": {
+            "item": "simplymartians:purple_fluxium_drill"
+        }
+    },
+    "result": {
+        "id": "simplymartians:mega_drill",
+        "count": 1
+    }
+}

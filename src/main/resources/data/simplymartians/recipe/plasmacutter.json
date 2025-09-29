@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " c ",
+        "gDg",
+        " i "
+    ],
+    "key": {
+        "c": {
+            "item": "simplymartians:strange_martian_tech"
+        },
+        "g": {
+            "item": "simplymartians:martian_space_plates"
+        },
+        "D": {
+            "item": "simplymartians:fluxium_sword"
+        },
+        "i": {
+            "item": "simplymartians:refined_fluxium"
+        }
+    },
+    "result": {
+        "id": "simplymartians:plasmacutter",
+        "count": 1
+    }
+}

@@ -1,5 +1,6 @@
 package com.wither.simplymartians.entities;
 
+import com.wither.simplymartians.core.init.InitDamageTypes;
 import com.wither.simplymartians.core.init.InitSoundEvents;
 import com.wither.simplymartians.core.init.ModMobEffects;
 import com.wither.simplymartians.core.util.TagInit;
@@ -58,7 +59,7 @@ public class MartianProbeEntity extends PathfinderMob implements RangedAttackMob
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 15.0F));
+        this.goalSelector.addGoal(1, new StrafingRangedAttackGoal(this, 1.25, 20, 15.0F));
         this.goalSelector.addGoal(5, new MoveTowardsRestrictionGoal(this, 1.0));
         this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0, 0.0F));
         this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
@@ -139,7 +140,7 @@ public class MartianProbeEntity extends PathfinderMob implements RangedAttackMob
     
     @Override
     protected boolean shouldDespawnInPeaceful() {
-        return false;
+        return true;
     }
 
     @Override
@@ -148,7 +149,18 @@ public class MartianProbeEntity extends PathfinderMob implements RangedAttackMob
         builder.define(DATA_FLAGS_ID, (byte)0);
     }
 
-    
+    @Override
+    public boolean hurt(DamageSource pSource, float pAmount) {
+    	
+		
+	 if (this.isInvulnerableTo(pSource)) {
+            return false;
+        } else if (pSource.is(InitDamageTypes.MARTIAN_SHOCK) || pSource.getEntity() instanceof MartianProbeEntity) {
+            return false;
+        }
+       return super.hurt(pSource, pAmount);
+
+        }
    
   
     
@@ -166,7 +178,7 @@ public class MartianProbeEntity extends PathfinderMob implements RangedAttackMob
     public void performRangedAttack(LivingEntity target, float distanceFactor) {
         this.getItemInHand(ProjectileUtil.getWeaponHoldingHand(this, item -> item instanceof net.minecraft.world.item.ProjectileWeaponItem));
 
-        ZapBolt snowball = new ZapBolt(this.level(), this);
+        MartianBolt snowball = new MartianBolt(this.level(), this);
         double d0 = target.getEyeY() - 1.1F;
         double d1 = target.getX() - this.getX();
         double d2 = d0 - snowball.getY();
@@ -175,6 +187,9 @@ public class MartianProbeEntity extends PathfinderMob implements RangedAttackMob
         snowball.shoot(d1, d2 + d4, d3, 1.8F, 1.0F);
         this.playSound(InitSoundEvents.LASER_SHOOT.get(), 1.0F, 0.4F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.level().addFreshEntity(snowball);
+        
+        
+        
     }
 	
     
