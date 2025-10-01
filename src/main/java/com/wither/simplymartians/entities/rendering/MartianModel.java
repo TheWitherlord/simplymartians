@@ -98,6 +98,7 @@ public class MartianModel<T extends SimpleMartianEntity> extends EntityModel<T> 
 		            this.left_leg.xRot = -1.4137167F;
 		            this.left_leg.yRot = (float) (-Math.PI / 10);
 		            this.left_leg.zRot = -0.07853982F;
+		      }
 		      
 		      if (pEntity.getItemInHand(InteractionHand.MAIN_HAND).getItem() == InitItem.VIBRAEDGE.get()) {
 	                AnimationUtils.swingWeaponDown(this.right_arm, this.left_arm, pEntity, this.attackTime, pAgeInTicks);
@@ -108,7 +109,7 @@ public class MartianModel<T extends SimpleMartianEntity> extends EntityModel<T> 
 	            }
 		      }
 	      
-	        }
+	        
 	       
 		
 

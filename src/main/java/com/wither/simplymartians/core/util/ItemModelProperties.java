@@ -193,4 +193,42 @@ public class ItemModelProperties {
 						&& livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
 
 	}
+	@SubscribeEvent
+	public static void setModelPropertiesRocketMaul(FMLClientSetupEvent event) {
+		ItemProperties.register(InitItem.ROCKET_MAUL.get(), ResourceLocation.parse("activate"),
+				(itemStack, world, livingEntity, seed) -> {
+					if (livingEntity == null) {
+						return 0.0F;
+					} else {
+						return livingEntity.getUseItem() != itemStack ? 0.0F
+								: (float) (itemStack.getUseDuration(livingEntity)
+										- livingEntity.getUseItemRemainingTicks()) / 10.0F;
+					}
+				});
+
+		ItemProperties.register(InitItem.ROCKET_MAUL.get(), ResourceLocation.parse("slam"),
+				(itemStack, world, livingEntity, seed) -> livingEntity != null && livingEntity.isUsingItem()
+						&& livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
+
+	}
+	
+	@SubscribeEvent
+	public static void setModelPropertiesEnergyRipper(FMLClientSetupEvent event) {
+		ItemProperties.register(InitItem.ENERGY_RIPPER.get(), ResourceLocation.parse("activate"),
+				(itemStack, world, livingEntity, seed) -> {
+					if (livingEntity == null) {
+						return 0.0F;
+					} else {
+						return livingEntity.getUseItem() != itemStack ? 0.0F
+								: (float) (itemStack.getUseDuration(livingEntity)
+										- livingEntity.getUseItemRemainingTicks()) / 10.0F;
+					}
+				});
+
+		ItemProperties.register(InitItem.ENERGY_RIPPER.get(), ResourceLocation.parse("chainsawing"),
+				(itemStack, world, livingEntity, seed) -> livingEntity != null && livingEntity.isUsingItem()
+						&& livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
+
+	}
 }
+

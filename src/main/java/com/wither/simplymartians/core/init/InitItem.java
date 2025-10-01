@@ -2,6 +2,10 @@ package com.wither.simplymartians.core.init;
 
 import com.wither.simplymartians.SimplyMartians;
 import com.wither.simplymartians.items.AuraforceItem;
+import com.wither.simplymartians.items.BlasteratorItem;
+import com.wither.simplymartians.items.DecimatorItem;
+import com.wither.simplymartians.items.EnergyRifleItem;
+import com.wither.simplymartians.items.EnergyRipperItem;
 import com.wither.simplymartians.items.EngineerGogglesItem;
 import com.wither.simplymartians.items.MartianArmorItem;
 import com.wither.simplymartians.items.MartianDrillItem;
@@ -11,8 +15,10 @@ import com.wither.simplymartians.items.MartianSwordItem;
 import com.wither.simplymartians.items.MartianZapperItem;
 import com.wither.simplymartians.items.MegaMartianDrillItem;
 import com.wither.simplymartians.items.MeteorSummonerItem;
+import com.wither.simplymartians.items.MottgunItem;
 import com.wither.simplymartians.items.PlasmaCutterItem;
 import com.wither.simplymartians.items.PlasmaRifleItem;
+import com.wither.simplymartians.items.RocketMaceItem;
 import com.wither.simplymartians.items.VibraedgeItem;
 
 import net.minecraft.world.item.ArmorItem;
@@ -37,7 +43,19 @@ public class InitItem {
 	
 	public static final DeferredItem<Item> MARTIAN_KEY = ITEMS.register("martian_key",
 			() -> new Item(itemBuilder().rarity(Rarity.RARE).stacksTo(64)));
+
+	public static final DeferredItem<Item> RAW_COSMIUM = ITEMS.register("raw_cosmium",
+			() -> new Item(itemBuilder().stacksTo(64)));
 	
+	public static final DeferredItem<Item> COSMIUM_INGOT = ITEMS.register("cosmium_ingot",
+			() -> new Item(itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> COSMIUM_NUGGET = ITEMS.register("cosmium_nugget",
+			() -> new Item(itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> METEORSTONE = ITEMS.register("meteorstone",
+			() -> new Item(itemBuilder().stacksTo(64)));
+
 	public static final DeferredItem<Item> UNREFINED_FLUXIUM = ITEMS.register("unrefined_fluxium",
 			() -> new Item(itemBuilder().stacksTo(64)));
 	
@@ -75,13 +93,33 @@ public class InitItem {
 	
 	public static final DeferredItem<Item> PLASMA_RIFLE = ITEMS.register("plasma_rifle",
 			() -> new PlasmaRifleItem(
-					itemBuilder().stacksTo(1).durability(450).rarity(Rarity.EPIC).fireResistant()));
+					itemBuilder().stacksTo(1).durability(485).rarity(Rarity.EPIC).fireResistant()));
+	
+	public static final DeferredItem<Item> ENERGY_RIFLE = ITEMS.register("energy_rifle",
+			() -> new EnergyRifleItem(
+					itemBuilder().stacksTo(1).durability(485).rarity(Rarity.EPIC).fireResistant()));
+	
+	public static final DeferredItem<Item> MOTTGUN = ITEMS.register("mottgun",
+			() -> new MottgunItem(
+					itemBuilder().stacksTo(1).durability(2420).rarity(Rarity.EPIC).fireResistant()));
+	
+	public static final DeferredItem<Item> BLASTERATOR = ITEMS.register("blasterator",
+			() -> new BlasteratorItem(
+					itemBuilder().stacksTo(1).durability(2420).rarity(Rarity.EPIC).fireResistant()));
+	
+	public static final DeferredItem<Item> DECIMATOR = ITEMS.register("decimator",
+			() -> new DecimatorItem(
+					itemBuilder().stacksTo(1).durability(2420).rarity(Rarity.EPIC).fireResistant()));
+	
+	public static final DeferredItem<Item> ENERGY_RIPPER = ITEMS.register("energy_ripper",
+			() -> new EnergyRipperItem(ModToolMaterials.MARTIAN, itemBuilder().rarity(Rarity.EPIC).fireResistant()
+							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 7, -1.7F))));
 	
 	public static final DeferredItem<Item> VIBRAEDGE = ITEMS.register("vibraedge",
 			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 7, -2.0F,
 					itemBuilder().rarity(Rarity.RARE).fireResistant()
 							.attributes(MartianSwordItem.createAttributes(ModToolMaterials.MARTIAN, 7, -1.7F))));
-	
+	 
 	public static final DeferredItem<Item> RED_VIBRAEDGE = ITEMS.register("red_vibraedge",
 			() -> new MartianSwordItem(ModToolMaterials.MARTIAN, 7, -2.0F,
 					itemBuilder().rarity(Rarity.RARE).fireResistant()
@@ -118,6 +156,10 @@ public class InitItem {
 	public static final DeferredItem<Item> TECHNOMACE = ITEMS.register("technomace",
 			() -> new MartianMaceItem(ModToolMaterials.MARTIAN, itemBuilder().rarity(Rarity.EPIC).fireResistant()
 							.attributes(MartianMaceItem.createAttributes(ModToolMaterials.MARTIAN, 7, -3.2F, 0.50f, 2))));
+	
+	public static final DeferredItem<Item> ROCKET_MAUL = ITEMS.register("rocket_maul",
+			() -> new RocketMaceItem(ModToolMaterials.MARTIAN, itemBuilder().rarity(Rarity.EPIC).fireResistant()
+							.attributes(MartianMaceItem.createAttributes(ModToolMaterials.MARTIAN, 7, -3.2F, 0.50f, 3))));
 	
 	
 	//martian tools

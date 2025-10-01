@@ -60,8 +60,8 @@ public class MartianGrenade extends Fireball {
 
 			if (livingentity != null) {
 				livingentity.setLastHurtMob(entity);
-				((ServerLevel)this.level()).sendParticles(ModParticleTypes.OVERSHOCK.get(), this.getX(), this.getY(), this.getZ(), 2, 0.2D, 0.2D, 0.2D, 0.0D);
-		         this.level().explode(this, this.getX(), this.getY(), this.getZ(), 0.8f, Level.ExplosionInteraction.MOB);
+				((ServerLevel)this.level()).sendParticles(ModParticleTypes.PLASMASHOCK.get(), this.getX(), this.getY(), this.getZ(), 2, 0.2D, 0.2D, 0.2D, 0.0D);
+		         this.level().explode(this, this.getX(), this.getY(), this.getZ(), 1.2f, Level.ExplosionInteraction.MOB);
 		            this.discard();
 
 
@@ -92,12 +92,12 @@ public class MartianGrenade extends Fireball {
 					areaeffectcloud.setOwner((LivingEntity) entity);
 				}
 
-				areaeffectcloud.setParticle(ModParticleTypes.OVERSHOCK.get());
+				areaeffectcloud.setParticle(ModParticleTypes.PLASMASHOCK.get());
 				areaeffectcloud.setRadius(4.0F);
 				areaeffectcloud.setDuration(55);
 				areaeffectcloud
 						.setRadiusPerTick((2.0F - areaeffectcloud.getRadius()) / (float) areaeffectcloud.getDuration());
-				areaeffectcloud.addEffect(new MobEffectInstance(ModMobEffects.OVERSHOCK, 145, 0));
+				areaeffectcloud.addEffect(new MobEffectInstance(ModMobEffects.PLASMA, 145, 0));
 
 				if (!list.isEmpty()) {
 					for (LivingEntity livingentity : list) {

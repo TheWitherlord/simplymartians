@@ -2,6 +2,9 @@ package com.wither.simplymartians.core.init;
 
 import com.wither.simplymartians.SimplyMartians;
 import com.wither.simplymartians.entities.rendering.BiggerPlasmaBallRenderer;
+import com.wither.simplymartians.entities.rendering.DistressBeaconModel;
+import com.wither.simplymartians.entities.rendering.DistressBeaconRenderer;
+import com.wither.simplymartians.entities.rendering.EnergyBallRenderer;
 import com.wither.simplymartians.entities.rendering.FluxWaveRenderer;
 import com.wither.simplymartians.entities.rendering.MartianBoltRenderer;
 import com.wither.simplymartians.entities.rendering.MartianBruteModel;
@@ -13,6 +16,7 @@ import com.wither.simplymartians.entities.rendering.MartianModel;
 import com.wither.simplymartians.entities.rendering.MartianProbeRenderer;
 import com.wither.simplymartians.entities.rendering.MartianRenderer;
 import com.wither.simplymartians.entities.rendering.MartianSurveyorRenderer;
+import com.wither.simplymartians.entities.rendering.MottLaserRenderer;
 import com.wither.simplymartians.entities.rendering.PlasmaBallRenderer;
 import com.wither.simplymartians.entities.rendering.ProbeModel;
 import com.wither.simplymartians.entities.rendering.TeslaBotModel;
@@ -44,6 +48,7 @@ public class RenderingRegistry {
             event.registerEntityRenderer(InitEntity.MARTIAN_PROBE.get(), MartianProbeRenderer::new);
             event.registerEntityRenderer(InitEntity.MARTIAN_ENGINEER.get(), MartianEngineerRenderer::new);
             event.registerEntityRenderer(InitEntity.TESLA_BOT.get(), TeslaBotRenderer::new);
+            event.registerEntityRenderer(InitEntity.MARTIAN_DISTRESS_BEACON.get(), DistressBeaconRenderer::new);
 
             event.registerEntityRenderer(InitEntity.MARTIAN_SURVEYOR.get(), MartianSurveyorRenderer::new);
 
@@ -57,6 +62,8 @@ public class RenderingRegistry {
             event.registerEntityRenderer(InitEntity.MARTIAN_GRENADE.get(), MartianGrenadeRenderer::new);
             event.registerEntityRenderer(InitEntity.PLASMA_BALL.get(), PlasmaBallRenderer::new);
             event.registerEntityRenderer(InitEntity.BIG_PLASMA_BALL.get(), BiggerPlasmaBallRenderer::new);
+            event.registerEntityRenderer(InitEntity.ENERGY_BALL.get(), EnergyBallRenderer::new);
+            event.registerEntityRenderer(InitEntity.MOTT_LASER.get(), MottLaserRenderer::new);
 
 
     }
@@ -72,6 +79,7 @@ public class RenderingRegistry {
                 event.registerLayerDefinition(ZombieMartianBruteModel.LAYER_LOCATION, ZombieMartianBruteModel::createBodyLayer);
                 event.registerLayerDefinition(UFOModel.LAYER_LOCATION, UFOModel::createBodyLayer);
                 event.registerLayerDefinition(TeslaBotModel.LAYER_LOCATION, TeslaBotModel::createBodyLayer);
+                event.registerLayerDefinition(DistressBeaconModel.LAYER_LOCATION, DistressBeaconModel::createBodyLayer);
 
 
        

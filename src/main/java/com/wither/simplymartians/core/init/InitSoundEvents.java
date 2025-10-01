@@ -24,6 +24,7 @@ public class InitSoundEvents {
 	public static final Supplier<SoundEvent> MARTIAN_AMBIENT = registerSoundEvent("mob.martian.ambient");
 	public static final Supplier<SoundEvent> MARTIAN_HURT = registerSoundEvent("mob.martian.hurt");
 	public static final Supplier<SoundEvent> MARTIAN_DEATH = registerSoundEvent("mob.martian.death");
+	public static final Supplier<SoundEvent> DECIMATOR = registerSoundEvent("item.decimator.power_up");
 
 	/**
 	 * Registers the {@link DeferredRegister} instance with the mod event bus.

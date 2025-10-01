@@ -1,4 +1,13 @@
 {
+   "item.decimator.power_up":{
+      "category":"player",
+      "sounds":[
+         "simplymartians:item/decimator/power_up"
+      ],
+      "subtitle":"subtitles.item.simplymartians:item.decimator.power_up"
+   },
+
+
    "item.fluxium_drill.drill":{
       "category":"player",
       "sounds":[

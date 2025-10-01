@@ -113,7 +113,7 @@ public class BigPlasmaBall extends ModProjectile {
 		            this.setXRot((float)(Math.atan2(newVelocity.y, newVelocity.horizontalDistance()) * 180.0 / Math.PI));
 		
 		this.life++;
-        if (this.life >= 30) {
+        if (this.life >= 55) {
             this.discard();
                   }
 		        }}

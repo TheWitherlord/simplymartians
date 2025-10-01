@@ -98,6 +98,7 @@ public class MartianBruteModel<T extends MartianBruteEntity> extends EntityModel
 	            this.left_leg.xRot = -1.4137167F;
 	            this.left_leg.yRot = (float) (-Math.PI / 10);
 	            this.left_leg.zRot = -0.07853982F;
+	      }
 	      
 	      if (pEntity.getItemInHand(InteractionHand.MAIN_HAND).getItem() == InitItem.FLUXIUM_SWORD.get()) {
                AnimationUtils.swingWeaponDown(this.right_arm, this.left_arm, pEntity, this.attackTime, pAgeInTicks);
@@ -107,7 +108,7 @@ public class MartianBruteModel<T extends MartianBruteEntity> extends EntityModel
            }
            }}
      
-       }
+       
       
 	
 

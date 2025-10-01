@@ -21,6 +21,11 @@
     "item.simplymartians.martian_key": "Martian Key",
     "item.simplymartians.martian_zapper": "Martian Zapper",
      "item.simplymartians.plasma_rifle": "Plasma Rifle",
+     "item.simplymartians.energy_rifle": "Energy Rifle",
+     "item.simplymartians.mottgun": "Mottgun",
+     "item.simplymartians.blasterator": "Blasterator",
+      "item.simplymartians.decimator": "Decimator",
+      "item.simplymartians.energy_ripper": "Energy Ripper",
     "item.simplymartians.vibraedge": "Blue Vibra-Edge",
      "item.simplymartians.red_vibraedge": "Red Vibra-Edge",
      "item.simplymartians.yellow_vibraedge": "Yellow Vibra-Edge",
@@ -30,6 +35,7 @@
      "item.simplymartians.auraforce": "Auraforce",
      "item.simplymartians.plasmacutter": "Plasma-Cutter",
         "item.simplymartians.technomace": "Technomace",
+       "item.simplymartians.rocket_maul": "Rocket-Maul",
          "item.simplymartians.fluxium_drill": "Blue Fluxium Drill",
      "item.simplymartians.red_fluxium_drill": "Red Fluxium Drill",
      "item.simplymartians.yellow_fluxium_drill": "Yellow Fluxium Drill",
@@ -112,11 +118,14 @@
 "entity.simplymartians.martian_surveyor":"Martian Surveyor",
 
 
-"entity.simplymartians.martian_brute":"Zap Bolt",
+"entity.simplymartians.zap_bolt":"Zap Laser",
 "entity.simplymartians.flux_wave":"Flux Wave",
 "entity.simplymartians.plasma_ball":"Plasma Ball",
+"entity.simplymartians.big_plasma_ball":"Big Plasma Ball",
 "entity.simplymartians.martian_grenade":"Martian Grenade",
-"entity.simplymartians.martian_bolt":"Martian Grenade",
+"entity.simplymartians.martian_bolt":"Martian Laser",
+"entity.simplymartians.mott_laser":"Mott Laser",
+"entity.simplymartians.energy_ball":"Energy Ball",
 
 //effects
 "effect.simplymartians.overshock":"Overshock",
@@ -129,6 +138,7 @@
 "tooltip.simplymartians.zapper.ammo": "Martian Power Cells",
 "tooltip.simplymartians.plasma_rifle.tooltip": "Ammo:",
 "tooltip.simplymartians.plasma_rifle.ammo": "Martian Power Cells",
+"tooltip.simplymartians.blasterator.ammo": "Durability. Repair with Martian Tech.",
 "tooltip.simplymartians.meteor.tooltip": "Summons a Meteor! Use with CAUTION!",
 
 //damage

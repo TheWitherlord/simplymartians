@@ -1,0 +1,21 @@
+{
+    "parent": "simplymartians:item/rocket_maul",
+"loader": "neoforge:item_layers",
+  "neoforge_data": {
+    "layers": {
+      "0": {
+        "block_light": 15,
+        "sky_light": 15
+      }
+    }
+  },
+  "render_types": {
+    "minecraft:translucent": [
+      0
+    ]
+  },
+
+    "textures": {
+        "layer0": "simplymartians:item/rocket_maul_2"
+    }
+}

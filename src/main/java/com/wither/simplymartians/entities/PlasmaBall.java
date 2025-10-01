@@ -11,6 +11,7 @@ import com.wither.simplymartians.core.init.ModMobEffects;
 import com.wither.simplymartians.core.init.ModParticleTypes;
 
 import net.minecraft.core.Direction;
+import net.minecraft.core.Vec3i;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -137,37 +138,19 @@ public class PlasmaBall extends ModProjectile {
 	            .orElse(null);
 	    }
 	
+	  @Override
+	    protected void onHitBlock(BlockHitResult pResult) {
+	        super.onHitBlock(pResult);
+	        if (!this.level().isClientSide) {
+	            Vec3i vec3i = pResult.getDirection().getNormal();
+	            Vec3 vec3 = Vec3.atLowerCornerOf(vec3i).multiply(0.25, 0.25, 0.25);
+	            Vec3 vec31 = pResult.getLocation().add(vec3);
+	            ((ServerLevel)this.level()).sendParticles(ParticleTypes.SMOKE, this.getX(), this.getY(), this.getZ(), 2, 0.2D, 0.2D, 0.2D, 0.0D);
+		      // this.level().explode(this, this.getX(), this.getY(), this.getZ(), 0.4f, Level.ExplosionInteraction.NONE);
 
-	 protected void onHitBlock(BlockHitResult result) {
-		    // Get the normal (face) of the block hit
-		    Direction normal = result.getDirection();
-
-		    // Get current motion vector
-		    Vec3 currentMotion = this.getDeltaMovement();
-
-		    double motionX = currentMotion.x;
-		    double motionY = currentMotion.y;
-		    double motionZ = currentMotion.z;
-
-		    // Apply a dampening factor (e.g., 0.8) to make it lose speed with each bounce
-		    float dampening = 0.8f; 
-
-		    if (normal.getAxis() == Direction.Axis.X) {
-		        motionX = -motionX * dampening;
-		    } else if (normal.getAxis() == Direction.Axis.Y) {
-		        motionY = -motionY * dampening;
-		        if (Math.abs(motionY) < 0.1) { 
-		            motionY = 0;
-		        }
-		    } else if (normal.getAxis() == Direction.Axis.Z) {
-		        motionZ = -motionZ * dampening;
-		    }
-
-		    this.setDeltaMovement(motionX, motionY, motionZ);
-
-		   
-		   this.playSound(SoundEvents.BREEZE_DEFLECT, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-		}
+	            this.discard();
+	        }
+	    }
 	 
 
 	    @Override
