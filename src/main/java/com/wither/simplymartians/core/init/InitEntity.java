@@ -9,6 +9,7 @@ import com.wither.simplymartians.entities.FluxWave;
 import com.wither.simplymartians.entities.MartianBolt;
 import com.wither.simplymartians.entities.MartianBruteEntity;
 import com.wither.simplymartians.entities.MartianDistressBeacon;
+import com.wither.simplymartians.entities.MartianEnforcerEntity;
 import com.wither.simplymartians.entities.MartianEngineerEntity;
 import com.wither.simplymartians.entities.MartianGrenade;
 import com.wither.simplymartians.entities.MartianProbeEntity;
@@ -81,15 +82,19 @@ public class InitEntity {
 	
 	public static final Supplier<EntityType<MartianDistressBeacon>> MARTIAN_DISTRESS_BEACON = ENTITIES_REGISTRY
 			.register("martian_distress_beacon", () -> EntityType.Builder.of(MartianDistressBeacon::new, MobCategory.MONSTER)
-					.sized(3.2F, 3.99F).clientTrackingRange(8).eyeHeight(1.75f).build(prefix("martian_distress_beacon")));
+					.sized(3.2F, 3.99F).clientTrackingRange(8).eyeHeight(2.5f).build(prefix("martian_distress_beacon")));
 	
 	public static final Supplier<EntityType<UFOBossEntity>> MARTIAN_SURVEYOR = ENTITIES_REGISTRY
 			.register("martian_surveyor", () -> EntityType.Builder.of(UFOBossEntity::new, MobCategory.MONSTER)
-					.sized(3.2F, 3.99F).clientTrackingRange(8).eyeHeight(1.75f).build(prefix("martian_surveyor")));
+					.sized(0.5F, 2.0F).clientTrackingRange(8).eyeHeight(1.75f).build(prefix("martian_surveyor")));
 	
 	public static final Supplier<EntityType<MartianEngineerEntity>> MARTIAN_ENGINEER = ENTITIES_REGISTRY
 			.register("martian_engineer", () -> EntityType.Builder.of(MartianEngineerEntity::new, MobCategory.MONSTER)
 					.sized(0.6F, 1.99F).clientTrackingRange(8).eyeHeight(1.55f).build(prefix("martian_engineer")));
+	
+	public static final Supplier<EntityType<MartianEnforcerEntity>> MARTIAN_ENFORCER = ENTITIES_REGISTRY
+			.register("martian_enforcer", () -> EntityType.Builder.of(MartianEnforcerEntity::new, MobCategory.MONSTER)
+					.sized(0.6F, 1.99F).clientTrackingRange(8).eyeHeight(1.55f).build(prefix("martian_enforcer")));
 	
 	public static final Supplier<EntityType<SimpleMartianEntity>> MARTIAN = ENTITIES_REGISTRY
 			.register("martian", () -> EntityType.Builder.of(SimpleMartianEntity::new, MobCategory.MONSTER)
@@ -134,6 +139,7 @@ public class InitEntity {
 		event.put(ZOMBIE_MARTIAN_BRUTE.get(), ZombieMartianBruteEntity.createAttributes().build());
 		event.put(MARTIAN_SURVEYOR.get(), UFOBossEntity.createAttributes().build());
 		event.put(MARTIAN_ENGINEER.get(), MartianEngineerEntity.createAttributes().build());
+		event.put(MARTIAN_ENFORCER.get(), MartianEnforcerEntity.createAttributes().build());
 		event.put(TESLA_BOT.get(), TeslaBotEntity.createAttributes().build());
 		event.put(MARTIAN_DISTRESS_BEACON.get(), MartianDistressBeacon.createAttributes().build());
 

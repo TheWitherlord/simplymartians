@@ -9,6 +9,7 @@ import com.wither.simplymartians.entities.rendering.FluxWaveRenderer;
 import com.wither.simplymartians.entities.rendering.MartianBoltRenderer;
 import com.wither.simplymartians.entities.rendering.MartianBruteModel;
 import com.wither.simplymartians.entities.rendering.MartianBruteRenderer;
+import com.wither.simplymartians.entities.rendering.MartianEnforcerRenderer;
 import com.wither.simplymartians.entities.rendering.MartianEngineerModel;
 import com.wither.simplymartians.entities.rendering.MartianEngineerRenderer;
 import com.wither.simplymartians.entities.rendering.MartianGrenadeRenderer;
@@ -49,6 +50,7 @@ public class RenderingRegistry {
             event.registerEntityRenderer(InitEntity.MARTIAN_ENGINEER.get(), MartianEngineerRenderer::new);
             event.registerEntityRenderer(InitEntity.TESLA_BOT.get(), TeslaBotRenderer::new);
             event.registerEntityRenderer(InitEntity.MARTIAN_DISTRESS_BEACON.get(), DistressBeaconRenderer::new);
+            event.registerEntityRenderer(InitEntity.MARTIAN_ENFORCER.get(), MartianEnforcerRenderer::new);
 
             event.registerEntityRenderer(InitEntity.MARTIAN_SURVEYOR.get(), MartianSurveyorRenderer::new);
 

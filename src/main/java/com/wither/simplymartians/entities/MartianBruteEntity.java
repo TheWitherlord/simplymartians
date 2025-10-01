@@ -225,7 +225,7 @@ public class MartianBruteEntity extends Monster implements RangedAttackMob {
 		this.getItemInHand(ProjectileUtil.getWeaponHoldingHand(this,
 				item -> item instanceof net.minecraft.world.item.ProjectileWeaponItem));
 
-		ZapBolt snowball = new ZapBolt(this.level(), this);
+		MartianBolt snowball = new MartianBolt(this.level(), this);
 		double d0 = target.getEyeY() - 1.1F;
 		double d1 = target.getX() - this.getX();
 		double d2 = d0 - snowball.getY();

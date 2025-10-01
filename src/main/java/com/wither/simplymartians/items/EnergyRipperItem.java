@@ -12,6 +12,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.EntitySelector;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
@@ -77,6 +78,7 @@ public class EnergyRipperItem extends AxeItem{
 	                     DamageSources damageSources = level.damageSources();
 	                     DamageSource continuousDamage = damageSources.source(InitDamageTypes.OVERSHOCK, player);
 	                	  if (level instanceof ServerLevel serverLevel) {
+	                		  stack.hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
 
                          serverLevel.sendParticles(ModParticleTypes.OVERSHOCK.get(), target.getX(), target.getY(), target.getZ(), 5, 0.5, 0.5, 0.5, 0.0);
 	                	  }
