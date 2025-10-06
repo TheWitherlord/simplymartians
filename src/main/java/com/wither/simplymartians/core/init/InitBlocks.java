@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -37,14 +38,13 @@ public class InitBlocks {
 					.requiresCorrectToolForDrops()));
 	
 	public static final DeferredBlock<Block> MARTIAN_SCREEN = BLOCKS.register("martian_screen",
-			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
+			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.GLASS).strength(2.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 	
 	public static final DeferredBlock<Block> MARTIAN_INTERIOR = BLOCKS.register("martian_interior",
 			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
-	
-	
+
 
 	public static final DeferredBlock<Block> MARTIAN_INTERIOR_LAMP = BLOCKS.register("martian_interior_lamp",
 			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).lightLevel((state) -> {
@@ -60,6 +60,39 @@ public class InitBlocks {
 			() -> new ConsoleBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).lightLevel((state) -> {
 				return 6;}) .strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
+	
+	//cosmium
+	
+	public static final DeferredBlock<Block> COSMIUM_SPACE_PLATING = BLOCKS.register("cosmium_space_plating",
+			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	public static final DeferredBlock<Block> SMALL_COSMIUM_SPACE_PLATING = BLOCKS.register("small_cosmium_space_plating",
+			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	public static final DeferredBlock<Block> COSMIUM_INTERIOR = BLOCKS.register("cosmium_interior",
+			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+
+	public static final DeferredBlock<Block> COSMIUM_INTERIOR_LAMP = BLOCKS.register("cosmium_interior_lamp",
+			() -> new RotatedPillarBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).lightLevel((state) -> {
+				return 12;}) .strength(3.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	public static final DeferredBlock<Block> COSMIUM_BLOCK = BLOCKS.register("cosmium_block",
+			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(3.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	public static final DeferredBlock<Block> RAW_COSMIUM_BLOCK = BLOCKS.register("raw_cosmium_block",
+			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(3.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	public static final DeferredBlock<Block> METEORSTONE_BLOCK = BLOCKS.register("meteorstone_block",
+			() -> new Block(BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(3.5F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	
 	
 	//meteor blocks
 	
@@ -234,7 +267,59 @@ public class InitBlocks {
 	
 	
 	
-	//slabs and stairs
+	//slabs, walls, and stairs
+	
+	public static final DeferredBlock<Block> METEOR_ROCK_SLAB = BLOCKS.register("meteor_rock_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	public static final DeferredBlock<Block> METEOR_ROCK_STAIRS = BLOCKS.register("meteor_rock_stairs",
+			() -> new StairBlock(MARTIAN_SPACE_PLATING.get().defaultBlockState(),
+					Block.Properties.ofFullCopy(MARTIAN_SPACE_PLATING.get())));
+	
+	public static final DeferredBlock<Block> METEOR_ROCK_WALL = BLOCKS.register("meteor_rock_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(3.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	
+	public static final DeferredBlock<Block> POLISHED_METEOR_ROCK_SLAB = BLOCKS.register("polished_meteor_rock_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	public static final DeferredBlock<Block> POLISHED_METEOR_ROCK_STAIRS = BLOCKS.register("polished_meteor_rock_stairs",
+			() -> new StairBlock(MARTIAN_SPACE_PLATING.get().defaultBlockState(),
+					Block.Properties.ofFullCopy(MARTIAN_SPACE_PLATING.get())));
+	
+	public static final DeferredBlock<Block> POLISHED_METEOR_ROCK_WALL = BLOCKS.register("polished_meteor_rock_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(3.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	public static final DeferredBlock<Block> METEOR_ROCK_BRICK_SLAB = BLOCKS.register("meteor_rock_brick_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(3.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	public static final DeferredBlock<Block> METEOR_ROCK_BRICK_STAIRS = BLOCKS.register("meteor_rock_brick_stairs",
+			() -> new StairBlock(METEOR_ROCK_BRICKS.get().defaultBlockState(),
+					Block.Properties.ofFullCopy(METEOR_ROCK_BRICKS.get())));
+	
+	public static final DeferredBlock<Block> METEOR_ROCK_BRICK_WALL = BLOCKS.register("meteor_rock_brick_wall",
+			() -> new WallBlock(BlockBehaviour.Properties.of().sound(SoundType.STONE).strength(3.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	
+	public static final DeferredBlock<Block> MARTIAN_INTERIOR_STAIRS = BLOCKS.register("martian_interior_stairs",
+			() -> new StairBlock(MARTIAN_SPACE_PLATING.get().defaultBlockState(),
+					Block.Properties.ofFullCopy(MARTIAN_SPACE_PLATING.get())));
+	
+	
+	public static final DeferredBlock<Block> MARTIAN_FLOORING_SLAB = BLOCKS.register("martian_flooring_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	public static final DeferredBlock<Block> MARTIAN_FLOORING_STAIRS = BLOCKS.register("martian_flooring_stairs",
+			() -> new StairBlock(MARTIAN_SPACE_PLATING.get().defaultBlockState(),
+					Block.Properties.ofFullCopy(MARTIAN_SPACE_PLATING.get())));
+	
 	
 	public static final DeferredBlock<Block> MARTIAN_SPACE_PLATING_SLAB = BLOCKS.register("martian_space_plating_slab",
 			() -> new SlabBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
@@ -249,18 +334,23 @@ public class InitBlocks {
 			() -> new SlabBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 	
-	public static final DeferredBlock<Block> MARTIAN_INTERIOR_STAIRS = BLOCKS.register("martian_interior_stairs",
-			() -> new StairBlock(MARTIAN_SPACE_PLATING.get().defaultBlockState(),
-					Block.Properties.ofFullCopy(MARTIAN_SPACE_PLATING.get())));
 	
-	
-	public static final DeferredBlock<Block> MARTIAN_FLOORING_SLAB = BLOCKS.register("martian_flooring_slab",
+	public static final DeferredBlock<Block> COSMIUM_SPACE_PLATING_SLAB = BLOCKS.register("cosmium_space_plating_slab",
 			() -> new SlabBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
 					.requiresCorrectToolForDrops()));
 	
-	public static final DeferredBlock<Block> MARTIAN_FLOORING_STAIRS = BLOCKS.register("martian_flooring_stairs",
-			() -> new StairBlock(MARTIAN_SPACE_PLATING.get().defaultBlockState(),
-					Block.Properties.ofFullCopy(MARTIAN_SPACE_PLATING.get())));
+	public static final DeferredBlock<Block> COSMIUM_SPACE_PLATING_STAIRS = BLOCKS.register("cosmium_space_plating_stairs",
+			() -> new StairBlock(COSMIUM_SPACE_PLATING.get().defaultBlockState(),
+					Block.Properties.ofFullCopy(COSMIUM_SPACE_PLATING.get())));
+	
+	
+	public static final DeferredBlock<Block> COSMIUM_INTERIOR_SLAB = BLOCKS.register("cosmium_interior_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3.0F, 1200F)
+					.requiresCorrectToolForDrops()));
+	
+	public static final DeferredBlock<Block> COSMIUM_INTERIOR_STAIRS = BLOCKS.register("cosmium_interior_stairs",
+			() -> new StairBlock(COSMIUM_SPACE_PLATING.get().defaultBlockState(),
+					Block.Properties.ofFullCopy(COSMIUM_SPACE_PLATING.get())));
 
 	
 }

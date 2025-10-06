@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "simplymartians:block/polished_meteor_rock",
+    "top": "simplymartians:block/polished_meteor_rock",
+    "side": "simplymartians:block/polished_meteor_rock"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "simplymartians:block/cosmium_space_plating",
+    "top": "simplymartians:block/cosmium_space_plating",
+    "side": "simplymartians:block/cosmium_space_plating"
+  }
+}
+
+
+
+
+
+
+

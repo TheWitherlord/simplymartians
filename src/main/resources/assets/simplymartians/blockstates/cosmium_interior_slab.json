@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "type=bottom": {
+            "model": "simplymartians:block/cosmium_interior_slab"
+        },
+        "type=double": {
+            "model": "simplymartians:block/cosmium_interior"
+        },
+        "type=top": {
+            "model": "simplymartians:block/cosmium_interior_slab_top"
+        }
+    }
+}

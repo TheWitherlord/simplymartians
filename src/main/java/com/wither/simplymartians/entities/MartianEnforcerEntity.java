@@ -10,6 +10,7 @@ import com.wither.simplymartians.core.util.TagInit;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerBossEvent;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -18,11 +19,13 @@ import net.minecraft.world.BossEvent;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.PowerableMob;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -38,12 +41,11 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 
-public class MartianEnforcerEntity extends SimpleMartianEntity implements RangedAttackMob {
+public class MartianEnforcerEntity extends Monster implements RangedAttackMob, PowerableMob {
 
     private int summonCooldown = 0;
 
@@ -59,9 +61,8 @@ public class MartianEnforcerEntity extends SimpleMartianEntity implements Ranged
 	@Override
 	protected void registerGoals() {
 		
-       this.goalSelector.addGoal(1, new EnforcerAttackGoal(this, 1.0D, 20, 60, 15.0F, 2.0F));
+       this.goalSelector.addGoal(1, new EnforcerAttackGoal(this, 1.1D, 20, 60, 15.0F, 2.0F));
        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.0D, false));
-
         this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.5F));
 		this.goalSelector.addGoal(5, new MoveTowardsRestrictionGoal(this, 1.0));
 		this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0, 0.0F));
@@ -147,9 +148,7 @@ public class MartianEnforcerEntity extends SimpleMartianEntity implements Ranged
 	    
 	    public void tick() {
 			super.tick();
-		 
-
-			
+           
 					 if (this.summonCooldown > 0) {
 				            this.summonCooldown--;
 					 }
@@ -163,6 +162,10 @@ public class MartianEnforcerEntity extends SimpleMartianEntity implements Ranged
 			}
 		    }
 		
+	    @Override
+	    public boolean isPowered() {
+	        return this.getHealth() >= this.getMaxHealth() / 2.0F;
+	    }
 	    
 	    
 	    public void startSeenByPlayer(ServerPlayer player) {
@@ -179,11 +182,19 @@ public class MartianEnforcerEntity extends SimpleMartianEntity implements Ranged
 		@Override
 	    public boolean hurt(DamageSource source, float amount) {
 	                
-	    	if (this.isInvulnerableTo(source)) {
-	            return false;
-	        } else if (source.is(InitDamageTypes.MARTIAN_SHOCK) || source.getEntity() instanceof MartianEnforcerEntity) {
-	            return false;
-	        }
+			 if (this.isInvulnerableTo(source)) {
+		            return false;
+		        } else if (source.is(InitDamageTypes.MARTIAN_SHOCK) || source.getEntity() instanceof MartianEnforcerEntity) {
+		            return false;
+		      
+		        } else {
+		            if (this.isPowered()) { 
+		            	 if (source.is(DamageTypes.MOB_PROJECTILE) || source.is(DamageTypes.ARROW) || source.is(InitDamageTypes.OVERSHOCK) || source.is(DamageTypes.TRIDENT) || source.is(DamageTypes.THROWN)) {
+		            			this.playSound(SoundEvents.BREEZE_DEFLECT, 0.5f, 0.2f / (this.getRandom().nextFloat() * 0.4F + 0.8F));
+
+		                     return false;
+		                }
+		            }
 	    	
 	        if (super.hurt(source, amount)) {
 	            Level level = this.level();
@@ -196,25 +207,30 @@ public class MartianEnforcerEntity extends SimpleMartianEntity implements Ranged
 	            return true;
 	        }
 	        return false;
+	            }}
 	        
-	    }
 	    
+		
 	   
 	   
 
 	    private void performSummon(Level level, LivingEntity target) {
-	        for (int i = 0; i < 4; i++) { 
-	        	TeslaBotEntity minion = new TeslaBotEntity(InitEntity.TESLA_BOT.get(), level);
+	        for (int i = 0; i < 2; i++) { 
+	        	if (this.level() instanceof ServerLevel serverLevel) {
+
+					SimpleMartianEntity martian = InitEntity.MARTIAN.get().spawn(serverLevel, this.blockPosition(),
+							MobSpawnType.SPAWNER);
 
 	            double spawnX = this.getX() + (level.random.nextDouble() - 0.5) * 4.0;
 	            double spawnZ = this.getZ() + (level.random.nextDouble() - 0.5) * 4.0;
 	            double spawnY = this.getY();
-	            minion.setPos(spawnX, spawnY, spawnZ);
+	            martian.setPos(spawnX, spawnY, spawnZ);
 
-	            minion.setTarget(target);
+	            martian.setTarget(target);
 
-	            level.addFreshEntity(minion);
+	            level.addFreshEntity(martian);
 
+	        }
 	        }
 	    }
 	
@@ -255,21 +271,24 @@ public class MartianEnforcerEntity extends SimpleMartianEntity implements Ranged
 	        return;
 	    }
 
-	    for (int i = 0; i < 5; i++) { // Fire 5 pellets
+	    for (int i = 0; i < 7; i++) { // bullet count
 	        MottLaser pellet = new MottLaser(this.level(), this);
 	        double d0 = pTarget.getX() - this.getX();
 	        double d1 = pTarget.getEyeY() - this.getEyeY();
 	        double d2 = pTarget.getZ() - this.getZ();
 	        double d3 = Math.sqrt(d0 * d0 + d2 * d2);
 
-	        // Calculate aim variance for a shotgun spread
+	        // shotgun spread
 	        float spread = 15.0F; // Adjust for desired spread
 	        double aimX = d0 + this.getRandom().nextGaussian() * spread * 0.0075D * d3;
 	        double aimY = d1 + this.getRandom().nextGaussian() * spread * 0.0075D * d3;
 	        double aimZ = d2 + this.getRandom().nextGaussian() * spread * 0.0075D * d3;
 
-	        pellet.shoot(aimX, aimY, aimZ, pVelocity, 0.5F); // The second value is inaccuracy, but we control it ourselves.
+	        pellet.shoot(aimX, aimY, aimZ, 2.0F, 0.5F);
+			this.playSound(InitSoundEvents.LASER_SHOOT.get(), 0.4f, 0.4f / (this.getRandom().nextFloat() * 0.4F + 0.8F));
+
 	        this.level().addFreshEntity(pellet);
 	    }
 	}
+
 }

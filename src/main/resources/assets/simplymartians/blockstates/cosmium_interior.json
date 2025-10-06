@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "": [
+      { "model": "simplymartians:block/cosmium_interior" },
+      { "model": "simplymartians:block/cosmium_interior_1" },
+      { "model": "simplymartians:block/cosmium_interior_2" }
+    ]
+  }
+}

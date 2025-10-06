@@ -217,6 +217,17 @@ public class InitItem {
 	
 	
 	//blocks
+	public static final DeferredItem<Item> COSMIUM_SPACE_PLATING = ITEMS.register("cosmium_space_plating",
+			() -> new BlockItem(InitBlocks.COSMIUM_SPACE_PLATING.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> SMALL_COSMIUM_SPACE_PLATING = ITEMS.register("small_cosmium_space_plating",
+			() -> new BlockItem(InitBlocks.SMALL_COSMIUM_SPACE_PLATING.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> COSMIUM_INTERIOR = ITEMS.register("cosmium_interior",
+			() -> new BlockItem(InitBlocks.COSMIUM_INTERIOR.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> COSMIUM_INTERIOR_LAMP = ITEMS.register("cosmium_interior_lamp",
+			() -> new BlockItem(InitBlocks.COSMIUM_INTERIOR_LAMP.get(), itemBuilder().stacksTo(64)));
 	
 	public static final DeferredItem<Item> MARTIAN_SPACE_PLATING = ITEMS.register("martian_space_plating",
 			() -> new BlockItem(InitBlocks.MARTIAN_SPACE_PLATING.get(), itemBuilder().stacksTo(64)));
@@ -241,6 +252,15 @@ public class InitItem {
 	
 	public static final DeferredItem<Item> MARTIAN_CONSOLE = ITEMS.register("martian_console",
 			() -> new BlockItem(InitBlocks.MARTIAN_CONSOLE.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> COSMIUM_BLOCK = ITEMS.register("cosmium_block",
+			() -> new BlockItem(InitBlocks.COSMIUM_BLOCK.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item>  RAW_COSMIUM_BLOCK = ITEMS.register("raw_cosmium_block",
+			() -> new BlockItem(InitBlocks.RAW_COSMIUM_BLOCK.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item>  METEORSTONE_BLOCK = ITEMS.register("meteorstone_block",
+			() -> new BlockItem(InitBlocks.METEORSTONE_BLOCK.get(), itemBuilder().stacksTo(64)));
 	
 	public static final DeferredItem<Item> HOT_METEOR_ROCK = ITEMS.register("hot_meteor_rock",
 			() -> new BlockItem(InitBlocks.HOT_METEOR_ROCK.get(), itemBuilder().stacksTo(64)));
@@ -372,6 +392,48 @@ public class InitItem {
 
 	public static final DeferredItem<Item> MARTIAN_INTERIOR_STAIRS = ITEMS.register("martian_interior_stairs",
 			() -> new BlockItem(InitBlocks.MARTIAN_INTERIOR_STAIRS.get(), itemBuilder().stacksTo(64)));
+	
+	
+	public static final DeferredItem<Item> COSMIUM_SPACE_PLATING_SLAB = ITEMS.register("cosmium_space_plating_slab",
+			() -> new BlockItem(InitBlocks.COSMIUM_SPACE_PLATING_SLAB.get(), itemBuilder().stacksTo(64)));
+
+	public static final DeferredItem<Item> COSMIUM_SPACE_PLATING_STAIRS = ITEMS.register("cosmium_space_plating_stairs",
+			() -> new BlockItem(InitBlocks.COSMIUM_SPACE_PLATING_STAIRS.get(), itemBuilder().stacksTo(64)));
+	
+	
+	public static final DeferredItem<Item> COSMIUM_INTERIOR_SLAB = ITEMS.register("cosmium_interior_slab",
+			() -> new BlockItem(InitBlocks.COSMIUM_INTERIOR_SLAB.get(), itemBuilder().stacksTo(64)));
+
+	public static final DeferredItem<Item> COSMIUM_INTERIOR_STAIRS = ITEMS.register("cosmium_interior_stairs",
+			() -> new BlockItem(InitBlocks.COSMIUM_INTERIOR_STAIRS.get(), itemBuilder().stacksTo(64)));
+	
+	
+	public static final DeferredItem<Item> METEOR_ROCK_SLAB = ITEMS.register("meteor_rock_slab",
+			() -> new BlockItem(InitBlocks.METEOR_ROCK_SLAB.get(), itemBuilder().stacksTo(64)));
+
+	public static final DeferredItem<Item> METEOR_ROCK_STAIRS = ITEMS.register("meteor_rock_stairs",
+			() -> new BlockItem(InitBlocks.METEOR_ROCK_STAIRS.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> METEOR_ROCK_WALL = ITEMS.register("meteor_rock_wall",
+			() -> new BlockItem(InitBlocks.METEOR_ROCK_WALL.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> POLISHED_METEOR_ROCK_SLAB = ITEMS.register("polished_meteor_rock_slab",
+			() -> new BlockItem(InitBlocks.POLISHED_METEOR_ROCK_SLAB.get(), itemBuilder().stacksTo(64)));
+
+	public static final DeferredItem<Item> POLISHED_METEOR_ROCK_STAIRS = ITEMS.register("polished_meteor_rock_stairs",
+			() -> new BlockItem(InitBlocks.POLISHED_METEOR_ROCK_STAIRS.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> POLISHED_METEOR_ROCK_WALL = ITEMS.register("polished_meteor_rock_wall",
+			() -> new BlockItem(InitBlocks.POLISHED_METEOR_ROCK_WALL.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> METEOR_ROCK_BRICK_SLAB = ITEMS.register("meteor_rock_brick_slab",
+			() -> new BlockItem(InitBlocks.METEOR_ROCK_BRICK_SLAB.get(), itemBuilder().stacksTo(64)));
+
+	public static final DeferredItem<Item> METEOR_ROCK_BRICK_STAIRS = ITEMS.register("meteor_rock_brick_stairs",
+			() -> new BlockItem(InitBlocks.METEOR_ROCK_BRICK_STAIRS.get(), itemBuilder().stacksTo(64)));
+	
+	public static final DeferredItem<Item> METEOR_ROCK_BRICK_WALL = ITEMS.register("meteor_rock_brick_wall",
+			() -> new BlockItem(InitBlocks.METEOR_ROCK_BRICK_WALL.get(), itemBuilder().stacksTo(64)));
 	
 	
 	

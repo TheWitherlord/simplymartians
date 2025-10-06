@@ -252,7 +252,7 @@ public class MartianDistressBeacon extends PathfinderMob {
 		// Ensure this logic only runs on the server side
 		if (this.level() instanceof ServerLevel serverLevel) {
 			// Spawn a new entity at the current mob's location
-			MartianBruteEntity martian = InitEntity.MARTIAN_BRUTE.get().spawn(serverLevel, this.blockPosition(),
+			MartianEnforcerEntity martian = InitEntity.MARTIAN_ENFORCER.get().spawn(serverLevel, this.blockPosition(),
 					MobSpawnType.SPAWNER);
 			if (martian != null) {
 				// Optional: set the spawned entity's target to the killer

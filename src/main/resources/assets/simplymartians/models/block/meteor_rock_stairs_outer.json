@@ -1,0 +1,15 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "simplymartians:block/meteor_rock",
+    "top": "simplymartians:block/meteor_rock",
+    "side": "simplymartians:block/meteor_rock"
+  }
+}
+
+
+
+
+
+
+

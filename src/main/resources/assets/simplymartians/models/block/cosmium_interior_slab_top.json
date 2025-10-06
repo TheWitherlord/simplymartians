@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/slab_top",
+    "textures": {
+        "bottom": "simplymartians:block/cosmium_interior",
+        "top": "simplymartians:block/cosmium_interior",
+        "side": "simplymartians:block/cosmium_interior"
+    }
+}

@@ -9,6 +9,7 @@ import com.wither.simplymartians.entities.rendering.FluxWaveRenderer;
 import com.wither.simplymartians.entities.rendering.MartianBoltRenderer;
 import com.wither.simplymartians.entities.rendering.MartianBruteModel;
 import com.wither.simplymartians.entities.rendering.MartianBruteRenderer;
+import com.wither.simplymartians.entities.rendering.MartianEnforcerModel;
 import com.wither.simplymartians.entities.rendering.MartianEnforcerRenderer;
 import com.wither.simplymartians.entities.rendering.MartianEngineerModel;
 import com.wither.simplymartians.entities.rendering.MartianEngineerRenderer;
@@ -82,6 +83,8 @@ public class RenderingRegistry {
                 event.registerLayerDefinition(UFOModel.LAYER_LOCATION, UFOModel::createBodyLayer);
                 event.registerLayerDefinition(TeslaBotModel.LAYER_LOCATION, TeslaBotModel::createBodyLayer);
                 event.registerLayerDefinition(DistressBeaconModel.LAYER_LOCATION, DistressBeaconModel::createBodyLayer);
+                event.registerLayerDefinition(MartianEnforcerModel.LAYER_LOCATION, MartianEnforcerModel::createBodyLayer);
+                event.registerLayerDefinition(MartianEnforcerModel.MARTIAN_FORCEFIELD, MartianEnforcerModel::createBodyLayer);
 
 
        

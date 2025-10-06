@@ -16,7 +16,6 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 public class TagInit
 {
 	
-	
     
     public static final TagKey<EntityType<?>> MARTIAN = TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(SimplyMartians.MODID, "martian"));
    

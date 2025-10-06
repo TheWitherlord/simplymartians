@@ -92,6 +92,8 @@ public class InitEntity {
 			.register("martian_engineer", () -> EntityType.Builder.of(MartianEngineerEntity::new, MobCategory.MONSTER)
 					.sized(0.6F, 1.99F).clientTrackingRange(8).eyeHeight(1.55f).build(prefix("martian_engineer")));
 	
+	
+	
 	public static final Supplier<EntityType<MartianEnforcerEntity>> MARTIAN_ENFORCER = ENTITIES_REGISTRY
 			.register("martian_enforcer", () -> EntityType.Builder.of(MartianEnforcerEntity::new, MobCategory.MONSTER)
 					.sized(0.6F, 1.99F).clientTrackingRange(8).eyeHeight(1.55f).build(prefix("martian_enforcer")));
